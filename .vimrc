@@ -34,6 +34,25 @@ NeoBundle 'tpope/vim-rails'
 " Ruby向けにendを自動挿入してくれる
 NeoBundle 'tpope/vim-endwise'
 
+" コード補完 
+NeoBundle 'Shougo/neocomplete.vim'
+NeoBundle 'marcus/rsense'
+NeoBundle 'supermomonga/neocomplete-rsense.vim'
+
+" 静的解析
+NeoBundle 'scrooloose/syntastic'
+
+" ドキュメント参照
+NeoBundle 'thinca/vim-ref'
+NeoBundle 'yuku-t/vim-ref-ri'
+
+" メソッドの定義元へジャンプ
+NeoBundle 'szw/vim-tags'
+
+" 自動で閉じる
+NeoBundle 'tpope/vim-endwise'
+
+
 " コメントON/OFFを手軽に実行
 NeoBundle 'tomtom/tcomment_vim'
 " シングルクオートとダブルクオートの入れ替え等
@@ -60,9 +79,39 @@ filetype plugin indent on
 NeoBundleCheck
 """"""""""""""""""""""""""""""
 
+" -------------------------------
+" Rsense
+" -------------------------------
+let g:rsenseHome = '/usr/local/lib/rsense-0.3'
+let g:rsenseUseOmniFunc = 1
+
+" --------------------------------
+" neocomplete.vim
+" --------------------------------
+let g:acp_enableAtStartup = 0
+let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#enable_smart_case = 1
+if !exists('g:neocomplete#force_omni_input_patterns')
+  let g:neocomplete#force_omni_input_patterns = {}
+endif
+let g:neocomplete#force_omni_input_patterns.ruby = '[^.*\t]\.\w*\|\h\w*::'
+
+" --------------------------------
+" rubocop
+" --------------------------------
+" syntastic_mode_mapをactiveにするとバッファ保存時にsyntasticが走る
+" active_filetypesに、保存時にsyntasticを走らせるファイルタイプを指定する
+let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': ['ruby'] }
+let g:syntastic_ruby_checkers = ['rubocop']
+
+
 """"""""""""""""""""""""""""""
 " 各種オプションの設定
 """"""""""""""""""""""""""""""
+" vim内部で使われる文字エンコーディングをutf-8に設定する
+set encoding=utf-8
+" 想定される改行コードの指定する
+set fileformats=unix,dos,mac
 " タグファイルの指定(でもタグジャンプは使ったことがない)
 set tags=~/.tags
 " スワップファイルは使わない(ときどき面倒な警告が出るだけで役に立ったことがない)
@@ -117,6 +166,8 @@ set shiftwidth=2
 set smarttab
 " カーソルを行頭、行末で止まらないようにする
 set whichwrap=b,s,h,l,<,>,[,]
+" clipbordを使う
+set clipboard=unnamed,autoselect
 " 構文毎に文字色を変化させる
 syntax on
 " カラースキーマの指定
@@ -254,4 +305,4 @@ imap ( ()<LEFT>
 """"""""""""""""""""""""""""""
 
 " filetypeの自動検出(最後の方に書いた方がいいらしい)
-filetype on
+filetype plugin indent on
