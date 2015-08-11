@@ -168,6 +168,8 @@ set smarttab
 set whichwrap=b,s,h,l,<,>,[,]
 " clipbordを使う
 set clipboard=unnamed,autoselect
+
+
 " 構文毎に文字色を変化させる
 syntax on
 " カラースキーマの指定
@@ -295,6 +297,15 @@ if has("autocmd")
     \ endif
 endif
 """"""""""""""""""""""""""""""
+
+""""""""""""""""""""""""""""""
+" クリップボードからコピー
+""""""""""""""""""""""""""""""
+if has("gui_running")
+  map <silent> <S-Insert> "+p
+  cmap <S-Insert> <C-R>+
+  imap <silent> <S-Insert> <Esc>"+pa
+endif
 
 """"""""""""""""""""""""""""""
 " 自動的に閉じ括弧を入力
