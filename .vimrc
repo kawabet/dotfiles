@@ -31,6 +31,14 @@ NeoBundle 'tpope/vim-fugitive'
 
 " Rails向けのコマンドを提供する
 NeoBundle 'tpope/vim-rails'
+
+" emmet関連 http://qiita.com/alpaca_taichou/items/056a4c42fe7a928973e6
+NeoBundle 'mattn/emmet-vim'
+NeoBundle 'open-browser.vim'
+NeoBundle 'mattn/webapi-vim'
+NeoBundle 'hail2u/vim-css3-syntax'
+NeoBundle 'kchmck/vim-coffee-script'
+
 " Ruby向けにendを自動挿入してくれる
 NeoBundle 'tpope/vim-endwise'
 
@@ -67,7 +75,6 @@ NeoBundle 'bronson/vim-trailing-whitespace'
 " less用のsyntaxハイライト
 NeoBundle 'KohPoll/vim-less'
 
-" 余談: neocompleteは合わなかった。ctrl+pで補完するのが便利
 
 call neobundle#end()
 
@@ -103,6 +110,32 @@ let g:neocomplete#force_omni_input_patterns.ruby = '[^.*\t]\.\w*\|\h\w*::'
 " active_filetypesに、保存時にsyntasticを走らせるファイルタイプを指定する
 let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': ['ruby'] }
 let g:syntastic_ruby_checkers = ['rubocop']
+
+
+" --------------------------------
+" emmet関連 
+" --------------------------------
+let g:user_emmet_mode = 'iv'
+  let g:user_emmet_leader_key = '<C-Y>'
+  let g:use_emmet_complete_tag = 1
+  let g:user_emmet_settings = {
+        \ 'lang' : 'ja',
+        \ 'html' : {
+        \   'filters' : 'html',
+        \ },
+        \ 'css' : {
+        \   'filters' : 'fc',
+        \ },
+        \ 'php' : {
+        \   'extends' : 'html',
+        \   'filters' : 'html',
+        \ },
+        \}
+augroup EmmitVim
+  autocmd!
+  autocmd FileType * let g:user_emmet_settings.indentation = '               '[:&tabstop]
+augroup END
+
 
 
 """"""""""""""""""""""""""""""
