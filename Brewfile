@@ -39,7 +39,7 @@ cask install appcleaner || true
 cask install bettertouchtool || true
 cask install betterzipql || true
 cask install alfred || true
-cask install evrnote || true
+cask install evernote || true
 cask install dropbox || true
 cask install karabiner || true
 cask install caffeine || true
