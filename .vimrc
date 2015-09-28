@@ -34,6 +34,7 @@ NeoBundle 'tpope/vim-rails'
 
 " emmet関連 http://qiita.com/alpaca_taichou/items/056a4c42fe7a928973e6
 " <C-Y>, (Ctrl-yの直後に,)でタグ展開
+" 使い方:http://motw.mods.jp/Vim/emmet-vim.html
 NeoBundle 'mattn/emmet-vim'
 NeoBundle 'open-browser.vim'
 NeoBundle 'mattn/webapi-vim'
