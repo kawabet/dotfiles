@@ -15,3 +15,8 @@ eval "$(rbenv init -)"
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+
+### for nodejs
+if [[ -s ~/.nvm/nvm.sh ]];
+   then source ~/.nvm/nvm.sh
+fi

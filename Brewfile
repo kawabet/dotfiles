@@ -22,6 +22,7 @@ install rbenv ruby-build
 install rsense
 install postgresql
 install ctags
+install nodebrew
 # Install Cask formula
 cask install iterm2 || true
 cask install kobito || true
@@ -34,6 +35,13 @@ cask install google-chrome || true
 cask install google-japanese-ime || true
 cask install firefox || true
 cask install sourcetree || true
+# quicklook plugins http://ottan.xyz/quick-look-plugin-78/
+cask install qlstephen
+cask install qlmarkdown
+cask install quicklook-json
+cask install quicklook-csv
+cask install betterzipql
+cask install qlcolorcode
 # Utility tools
 cask install appcleaner || true
 cask install bettertouchtool || true
