@@ -22,6 +22,11 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 
 " ファイルオープンを便利に
 NeoBundle 'Shougo/unite.vim'
+" ディレクトリからファイルを選択
+" http://qiita.com/0829/items/261225a51439776b36bf
+NeoBundle 'Shougo/vimfiler.vim'
+nnoremap <leader>e :VimFilerExplore -split -winwidth=30 -find -no-quit<Cr>
+
 " Unite.vimで最近使ったファイルを表示できるようにする
 NeoBundle 'Shougo/neomru.vim'
 " ファイルをtree表示してくれる
@@ -42,7 +47,7 @@ NeoBundle 'kchmck/vim-coffee-script'
 " Ruby向けにendを自動挿入してくれる
 NeoBundle 'tpope/vim-endwise'
 
-" コード補完 
+" コード補完
 NeoBundle 'Shougo/neocomplete.vim'
 NeoBundle 'marcus/rsense'
 NeoBundle 'supermomonga/neocomplete-rsense.vim'
