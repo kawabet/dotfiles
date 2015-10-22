@@ -26,6 +26,17 @@ NeoBundle 'Shougo/unite.vim'
 " http://qiita.com/0829/items/261225a51439776b36bf
 NeoBundle 'Shougo/vimfiler.vim'
 nnoremap <leader>e :VimFilerExplore -split -winwidth=30 -find -no-quit<Cr>
+NeoBundle 'Shougo/vimshell.vim'
+NeoBundle 'Shougo/vimproc.vim', {
+      \ 'build' : {
+      \     'windows' : 'tools\\update-dll-mingw',
+      \     'cygwin' : 'make -f make_cygwin.mak',
+      \     'mac' : 'make',
+      \     'linux' : 'make',
+      \     'unix' : 'gmake',
+      \    },
+      \ }
+
 
 " Unite.vimで最近使ったファイルを表示できるようにする
 NeoBundle 'Shougo/neomru.vim'
@@ -53,6 +64,9 @@ NeoBundle 'tpope/vim-endwise'
 NeoBundle 'Shougo/neocomplete.vim'
 NeoBundle 'marcus/rsense'
 NeoBundle 'supermomonga/neocomplete-rsense.vim'
+
+"JavaScriptシンタックス
+NeoBundle 'jelera/vim-javascript-syntax'
 
 " 静的解析
 NeoBundle 'scrooloose/syntastic'
