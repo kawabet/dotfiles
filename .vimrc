@@ -135,7 +135,9 @@ let g:neocomplete#force_omni_input_patterns.ruby = '[^.*\t]\.\w*\|\h\w*::'
 " --------------------------------
 " syntastic_mode_mapをactiveにするとバッファ保存時にsyntasticが走る
 " active_filetypesに、保存時にsyntasticを走らせるファイルタイプを指定する
-let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': ['ruby'] }
+let g:syntastic_mode_map = { 'mode': 'passive',
+    \ 'active_filetypes': ['ruby', 'javascript']
+    \ 'passive_filetypes': [] }
 let g:syntastic_ruby_checkers = ['rubocop']
 
 
