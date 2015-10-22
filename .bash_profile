@@ -20,3 +20,4 @@ export PATH="/usr/local/heroku/bin:$PATH"
 if [[ -s ~/.nvm/nvm.sh ]];
    then source ~/.nvm/nvm.sh
 fi
+export PATH=$HOME/.nodebrew/current/bin:$PATH

@@ -77,7 +77,6 @@ NeoBundle 'yuku-t/vim-ref-ri'
 
 " メソッドの定義元へジャンプ
 NeoBundle 'szw/vim-tags'
-remap <C-]> g<C-]>
 
 " 自動で閉じる
 NeoBundle 'tpope/vim-endwise'
