@@ -77,6 +77,7 @@ NeoBundle 'yuku-t/vim-ref-ri'
 
 " メソッドの定義元へジャンプ
 NeoBundle 'szw/vim-tags'
+remap <C-]> g<C-]>
 
 " 自動で閉じる
 NeoBundle 'tpope/vim-endwise'
@@ -132,14 +133,19 @@ let g:neocomplete#force_omni_input_patterns.ruby = '[^.*\t]\.\w*\|\h\w*::'
 
 " --------------------------------
 " rubocop
+" JavaScriptも
 " --------------------------------
 " syntastic_mode_mapをactiveにするとバッファ保存時にsyntasticが走る
 " active_filetypesに、保存時にsyntasticを走らせるファイルタイプを指定する
 let g:syntastic_mode_map = { 'mode': 'passive',
-    \ 'active_filetypes': ['ruby', 'javascript']
-    \ 'passive_filetypes': [] }
+    \ 'active_filetypes': ['ruby', 'javascript'],
+    \ 'passive_filetypes': [], }
 let g:syntastic_ruby_checkers = ['rubocop']
-
+let g:syntastic_enable_signs=1
+let g:syntastic_auto_loc_list=2
+let g:syntastic_javascript_checker = "jshint"
+let g:syntastic_javascript_jslint_conf = "--white --undef --nomen --regexp --plusplus --bitwise --newcap --sloppy --vars"
+" 上記はデフォルト。上書きしたい場合に設定。
 
 " --------------------------------
 " emmet関連 
