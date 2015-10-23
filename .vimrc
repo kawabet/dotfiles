@@ -77,9 +77,12 @@ NeoBundle 'yuku-t/vim-ref-ri'
 
 " メソッドの定義元へジャンプ
 NeoBundle 'szw/vim-tags'
+<<<<<<< HEAD
 " open ctag in tab/vertical split
 map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 map <leader><C-\> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
+=======
+>>>>>>> origin/master
 
 " 自動で閉じる
 NeoBundle 'tpope/vim-endwise'
