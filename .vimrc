@@ -26,6 +26,10 @@ NeoBundle 'Shougo/unite.vim'
 " http://qiita.com/0829/items/261225a51439776b36bf
 NeoBundle 'Shougo/vimfiler.vim'
 nnoremap <leader>e :VimFilerExplore -split -winwidth=30 -find -no-quit<Cr>
+let g:vimfiler_as_default_explorer = 1
+autocmd VimEnter * VimFiler -split -simple -winwidth=30 -no-quit
+
+" vimshell
 NeoBundle 'Shougo/vimshell.vim'
 NeoBundle 'Shougo/vimproc.vim', {
       \ 'build' : {
@@ -37,11 +41,12 @@ NeoBundle 'Shougo/vimproc.vim', {
       \    },
       \ }
 
-
 " Unite.vimで最近使ったファイルを表示できるようにする
 NeoBundle 'Shougo/neomru.vim'
+
 " ファイルをtree表示してくれる
-NeoBundle 'scrooloose/nerdtree'
+" NeoBundle 'scrooloose/nerdtree'
+
 " Gitを便利に使う
 NeoBundle 'tpope/vim-fugitive'
 
