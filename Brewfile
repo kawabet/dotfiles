@@ -48,6 +48,7 @@ cask install bettertouchtool || true
 cask install betterzipql || true
 cask install alfred || true
 cask install evernote || true
+casl install skitch || true
 cask install dropbox || true
 cask install karabiner || true
 cask install caffeine || true
