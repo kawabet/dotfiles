@@ -27,8 +27,19 @@ values."
      better-defaults
      emacs-lisp
      git
+     github
      markdown
      org
+     go
+     elixir
+     (ruby :valiables
+           ruby-enable-ruby-on-rails-support t
+           ruby-enable-enh-ruby-mode t
+           ruby-version-manager 'rbenv
+           ruby-test-runner 'rspec
+           )
+     python
+     yaml
      javascript
      html
      (shell :variables
@@ -36,6 +47,7 @@ values."
             shell-default-position 'bottom)
      spell-checking
      syntax-checking
+     eyebrowse
      version-control
      )
    ;; List of additional packages that will be installed without being
