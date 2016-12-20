@@ -1,0 +1,173 @@
+
+# tap repositories and their packages
+cask java7
+
+tap caskroom/cask
+cask alfred
+cask appcleaner
+cask atom
+cask bettertouchtool
+cask betterzipql
+cask bootchamp
+cask caffeine
+cask clipy
+cask dash
+cask diskwave
+cask dropbox
+cask eclipse-java
+cask evernote
+cask firefox
+cask google-chrome
+cask google-japanese-ime
+cask hyperswitch
+cask iterm2
+cask java
+cask karabiner
+cask libreoffice
+cask p4merge
+cask qlcolorcode
+cask qlmarkdown
+cask qlstephen
+cask quicklook-csv
+cask quicklook-json
+cask sequel-pro
+cask sourcetree
+cask sqlitebrowser
+cask vagrant
+cask virtualbox
+cask vlc
+cask xquartz
+
+tap caskroom/versions
+
+tap d12frosted/emacs-plus
+brew emacs-plus
+
+tap homebrew/boneyard
+brew rsense
+
+tap homebrew/brewdler
+
+tap homebrew/core
+brew apr
+brew apr-util
+brew autoconf
+brew bash
+brew bazaar
+brew cabextract
+brew cairo
+brew cask
+brew cmake
+brew cscope
+brew ctags
+brew curl
+brew docker
+brew docker-machine
+brew fontconfig --universal
+brew freetype --universal
+brew gd --universal
+brew gdbm
+brew gdk-pixbuf
+brew gettext
+brew ghq
+brew git
+brew glib
+brew glide
+brew gmp
+brew gnutls
+brew go
+brew gobject-introspection
+brew gradle
+brew harfbuzz
+brew heroku
+brew icu4c
+brew imagemagick
+brew jasper --universal
+brew jenkins
+brew jpeg --universal
+brew jq
+brew libcroco
+brew libevent
+brew libffi
+brew libgphoto2 --universal
+brew libicns --universal
+brew libpng --universal
+brew librsvg
+brew libtasn1 --universal
+brew libtiff --universal
+brew libtool --universal
+brew libusb --universal
+brew libusb-compat --universal
+brew libyaml
+brew little-cms2 --universal
+brew macvim
+brew makedepend
+brew maven
+brew memcached
+brew mongodb
+brew mysql
+brew net-snmp
+brew nettle
+brew nkf
+brew nodebrew
+brew nsq
+brew oniguruma
+brew openssl
+brew p7zip
+brew pango
+brew pcre
+brew peco
+brew perl
+brew pixman
+brew pkg-config
+brew postgresql
+brew pyenv
+brew python
+brew rbenv
+brew readline
+brew ruby
+brew ruby-build
+brew sane-backends --universal
+brew scons
+brew shared-mime-info
+brew sl
+brew sqlite
+brew subversion
+brew the_silver_searcher
+brew tmux
+brew tree
+brew unrar
+brew vim
+brew webp --universal
+brew wget
+brew wine
+brew winetricks
+brew xz --universal
+brew zsh
+brew mas
+brew reattach-to-user-namespace
+
+tap homebrew/versions
+
+tap rcmdnk/file
+brew brew-file
+
+# App Store applications
+appstore 836505650 Battery Monitor (2.4)
+appstore 417375580 BetterSnapTool (1.7)
+appstore 529456740 CheatSheet (1.0.3)
+appstore 432948323 DesktopMonitor (1.3)
+appstore 736008948 EpocCam Viewer (1.1)
+appstore 408980954 GarageBand (6.0.5)
+appstore 456877552 GeekTool (3.0.3)
+appstore 594391345 MarkdownLife (1.5.1)
+appstore 545005348 MyFiles (1.12)
+appstore 907364780 Pomodoro One (1.0.6)
+appstore 803453959 Slack (2.3.4)
+appstore 405580712 StuffIt Expander (15.0.7)
+appstore 425424353 The Unarchiver (3.11.1)
+appstore 497799835 Xcode (8.2)
+appstore 408981434 iMovie (10.1.4)
+appstore 408981434 iMovie 9.0.9 (9.0.9)
+appstore 408981381 iPhoto (9.6.1)
+appstore 572547904 紀伊國屋書店Kinoppy (3.0.0)
