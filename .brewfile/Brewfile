@@ -1,6 +1,5 @@
 
 # tap repositories and their packages
-cask java7
 
 tap caskroom/cask
 cask alfred
@@ -39,6 +38,7 @@ cask vlc
 cask xquartz
 
 tap caskroom/versions
+cask java7
 
 tap d12frosted/emacs-plus
 brew emacs-plus

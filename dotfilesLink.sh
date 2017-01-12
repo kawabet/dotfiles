@@ -15,3 +15,5 @@ ln -sf ~/dotfiles/.spacemacs ~/.spacemacs
 ln -sf ~/dotfiles/.eslintrc.json ~/.eslintrc.json
 # Brewfile
 ln -sf ~/dotfiles/.brewfile ~/.brewfile
+# tmux
+ln -sf ~/dotfiles/.tmux.conf ~/.tmux.conf
