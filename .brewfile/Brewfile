@@ -24,12 +24,14 @@ cask java
 cask karabiner
 cask libreoffice
 cask p4merge
+cask pingendo
 cask qlcolorcode
 cask qlmarkdown
 cask qlstephen
 cask quicklook-csv
 cask quicklook-json
 cask sequel-pro
+cask sketch
 cask sourcetree
 cask sqlitebrowser
 cask vagrant
@@ -102,6 +104,7 @@ brew libyaml
 brew little-cms2 --universal
 brew macvim
 brew makedepend
+brew mas
 brew maven
 brew memcached
 brew mongodb
@@ -125,6 +128,7 @@ brew pyenv
 brew python
 brew rbenv
 brew readline
+brew reattach-to-user-namespace
 brew ruby
 brew ruby-build
 brew sane-backends --universal
@@ -137,15 +141,13 @@ brew the_silver_searcher
 brew tmux
 brew tree
 brew unrar
-brew vim
+brew vim --with-lua
 brew webp --universal
 brew wget
 brew wine
 brew winetricks
 brew xz --universal
 brew zsh
-brew mas
-brew reattach-to-user-namespace
 
 tap homebrew/versions
 

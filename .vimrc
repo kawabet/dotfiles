@@ -27,7 +27,7 @@ NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimfiler.vim'
 nnoremap <leader>e :VimFilerExplore -split -winwidth=30 -find -no-quit<Cr>
 let g:vimfiler_as_default_explorer = 1
-autocmd VimEnter * VimFiler -split -simple -winwidth=30 -no-quit
+" autocmd VimEnter * VimFiler -split -simple -winwidth=30 -no-quit
 
 " vimshell
 NeoBundle 'Shougo/vimshell.vim'
