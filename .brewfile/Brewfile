@@ -126,6 +126,7 @@ brew pkg-config
 brew postgresql
 brew pyenv
 brew python
+brew python3
 brew rbenv
 brew readline
 brew reattach-to-user-namespace
@@ -153,6 +154,9 @@ tap homebrew/versions
 
 tap rcmdnk/file
 brew brew-file
+
+# Other Homebrew packages
+brew pt
 
 # App Store applications
 appstore 836505650 Battery Monitor (2.4)

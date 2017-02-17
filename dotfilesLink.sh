@@ -1,7 +1,12 @@
 #!/bin/sh
 # vim
-ln -sf ~/dotfiles/.vimrc ~/.vimrc
-ln -sf ~/dotfiles/indent ~/.vim
+# ln -sf ~/dotfiles/.vimrc ~/.vimrc
+# ln -sf ~/dotfiles/indent ~/.vim
+ln -sf ~/dotfiles/vim/vimrc ~/.vimrc
+ln -sf ~/dotfiles/vim ~/.vim
+# nvim
+ln -sf ~/dotfiles/vim/vimrc ~/.config/nvim/init.vim
+ln -sf ~/dotfiles/vim ~/.config/nvim
 # bash
 ln -sf ~/dotfiles/.bash_profile ~/.bash_profile
 ln -sf ~/dotfiles/.bashrc ~/.bashrc

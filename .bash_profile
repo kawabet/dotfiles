@@ -35,3 +35,7 @@ eval "$(pyenv init -)"
 if [ -f $(brew --prefix)/etc/brew-wrap ];then
   source $(brew --prefix)/etc/brew-wrap
 fi
+
+### neovim
+export XDG_CONFIG_HOME="$HOME/.config"
+
