@@ -1,0 +1,112 @@
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+# ファイルオープンを便利に
+[[plugins]]
+repo = 'Shougo/unite.vim'
+# Unite.vimで最近使ったファイルを表示できるようにする
+[[plugins]]
+repo = 'Shougo/neomru.vim'
+
+[[plugins]]
+# ディレクトリからファイルを選択
+# http://qiita.com/0829/items/261225a51439776b36bf
+repo = 'Shougo/vimfiler.vim'
+
+# vimshell
+[[plugins]]
+repo = 'Shougo/vimshell.vim'
+
+# ファイルをtree表示してくれる
+[[plugins]]
+repo = 'scrooloose/nerdtree'
+
+# Gitを便利に使う
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+
+[[plugins]]
+# Rails向けのコマンドを提供する
+repo = 'tpope/vim-rails'
+
+# emmet関連 http://qiita.com/alpaca_taichou/items/056a4c42fe7a928973e6
+# <C-Y>, (Ctrl-yの直後に,)でタグ展開
+# 使い方:http://motw.mods.jp/Vim/emmet-vim.html
+[[plugins]]
+repo = 'mattn/emmet-vim'
+[[plugins]]
+repo = 'mattn/webapi-vim'
+[[plugins]]
+repo = 'hail2u/vim-css3-syntax'
+[[plugins]]
+repo = 'kchmck/vim-coffee-script'
+
+# Ruby向けにendを自動挿入してくれる
+[[plugins]]
+repo = 'tpope/vim-endwise'
+
+# コード補完
+[[plugins]]
+repo = 'Shougo/neocomplete.vim'
+[[plugins]]
+repo = 'marcus/rsense'
+# [[plugins]]
+# repo = 'supermomonga/neocomplete-rsense.vim'
+
+#JavaScriptシンタックス
+[[plugins]]
+repo = 'jelera/vim-javascript-syntax'
+
+# 静的解析
+[[plugins]]
+repo = 'scrooloose/syntastic'
+
+# ドキュメント参照
+[[plugins]]
+repo = 'thinca/vim-ref'
+[[plugins]]
+repo = 'yuku-t/vim-ref-ri'
+
+# メソッドの定義元へジャンプ
+[[plugins]]
+repo = 'szw/vim-tags'
+# open ctag in tab/vertical split
+# map <C-\> :tab split<CR>:exec(#tag #.expand(#<cword>#))<CR>
+# map <leader><C-\> :vsp <CR>:exec(#tag #.expand(#<cword>#))<CR>
+
+# 自動で閉じる
+[[plugins]]
+repo = 'tpope/vim-endwise'
+
+
+# コメントON/OFFを手軽に実行
+[[plugins]]
+repo = 'tomtom/tcomment_vim'
+# シングルクオートとダブルクオートの入れ替え等
+[[plugins]]
+repo = 'tpope/vim-surround'
+
+# インデントに色を付けて見やすくする
+[[plugins]]
+repo = 'nathanaelkane/vim-indent-guides'
+# ログファイルを色づけしてくれる
+[[plugins]]
+repo = 'vim-scripts/AnsiEsc.vim'
+# 行末の半角スペースを可視化(うまく動かない？)
+[[plugins]]
+repo = 'bronson/vim-trailing-whitespace'
+# less用のsyntaxハイライト
+[[plugins]]
+repo = 'KohPoll/vim-less'
+
+# Markdown用
+# 参考:http://www.key-p.com/blog/staff/archives/9032
+# :PrevimOpen ブラウザでプレビューを表示する
+[[plugins]]
+repo = 'plasticboy/vim-markdown'
+[[plugins]]
+repo = 'kannokanno/previm'
+[[plugins]]
+repo = 'tyru/open-browser.vim'
+
+
