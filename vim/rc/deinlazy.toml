@@ -13,6 +13,9 @@ on_map = {n = '<Plug>'}
 on_if = "!has('nvim')"
 hook_add = 'nmap [Space]s  <Plug>(vimshell_switch)'
 
+[[plugins]]
+repo = 'Shougo/context_filetype.vim'
+
 # コード補完
 [[plugins]]
 repo = 'davidhalter/jedi-vim'
@@ -47,5 +50,5 @@ on_if = "has('lua')"
 on_event = 'InsertEnter'
 hook_source = '''
   let g:neocomplete#enable_at_startup = 1
-  source ~/.vim/rc/plugins/neocomplete.rc.vim
+  " source ~/.vim/rc/plugins/neocomplete.rc.vim
 '''
