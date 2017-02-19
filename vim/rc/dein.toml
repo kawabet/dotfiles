@@ -1,25 +1,18 @@
 [[plugins]]
 repo = 'Shougo/dein.vim'
 
-# ファイルオープンを便利に
-[[plugins]]
-repo = 'Shougo/unite.vim'
-# Unite.vimで最近使ったファイルを表示できるようにする
-[[plugins]]
-repo = 'Shougo/neomru.vim'
-
 [[plugins]]
 # ディレクトリからファイルを選択
 # http://qiita.com/0829/items/261225a51439776b36bf
 repo = 'Shougo/vimfiler.vim'
 
-# vimshell
-[[plugins]]
-repo = 'Shougo/vimshell.vim'
-
 # ファイルをtree表示してくれる
 [[plugins]]
 repo = 'scrooloose/nerdtree'
+
+# toml
+[[plugins]]
+repo = 'cespare/vim-toml'
 
 # Gitを便利に使う
 [[plugins]]
@@ -44,14 +37,6 @@ repo = 'kchmck/vim-coffee-script'
 # Ruby向けにendを自動挿入してくれる
 [[plugins]]
 repo = 'tpope/vim-endwise'
-
-# コード補完
-[[plugins]]
-repo = 'Shougo/neocomplete.vim'
-[[plugins]]
-repo = 'marcus/rsense'
-# [[plugins]]
-# repo = 'supermomonga/neocomplete-rsense.vim'
 
 #JavaScriptシンタックス
 [[plugins]]
@@ -109,4 +94,10 @@ repo = 'kannokanno/previm'
 [[plugins]]
 repo = 'tyru/open-browser.vim'
 
+# 色々なカラースキーム
+[[plugins]]
+repo = 'flazz/vim-colorschemes'
 
+[[plugins]]
+repo = 'nsf/gocode'
+rtp = 'vim'
