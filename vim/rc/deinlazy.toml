@@ -28,9 +28,17 @@ hook_source = '''
 [[plugins]]
 repo = 'marcus/rsense'
 
-  [[plugins]]
+[[plugins]]
 repo = 'fatih/vim-go'
 on_ft = ['go']
+hook_source = '''
+  " [VimでGoの開発環境を設定する方法のまとめ \- Qiita](http://qiita.com/koara-local/items/6c886eccfb459159c431)
+  let g:go_highlight_functions = 1
+  let g:go_highlight_methods = 1
+  let g:go_highlight_structs = 1
+  autocmd FileType go :highlight goErr cterm=bold ctermfg=214
+  autocmd FileType go :match goErr /\<err\>/
+'''
 
  [[plugins]]
 repo = 'Shougo/neocomplete.vim'

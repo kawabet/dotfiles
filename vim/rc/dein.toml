@@ -70,7 +70,6 @@ repo = 'tomtom/tcomment_vim'
 # シングルクオートとダブルクオートの入れ替え等
 [[plugins]]
 repo = 'tpope/vim-surround'
-
 # インデントに色を付けて見やすくする
 [[plugins]]
 repo = 'nathanaelkane/vim-indent-guides'
@@ -95,8 +94,13 @@ repo = 'kannokanno/previm'
 repo = 'tyru/open-browser.vim'
 
 # 色々なカラースキーム
-[[plugins]]
-repo = 'flazz/vim-colorschemes'
+# [[plugins]]
+# repo = 'flazz/vim-colorschemes'
+# hook_add = '''
+#   " [dein\.vimによるプラグイン管理のマイベストプラクティス \- Qiita](http://qiita.com/kawaz/items/ee725f6214f91337b42b)
+#   " set background=dark
+#   " au MyAutoGrp VimEnter * nested colorscheme monokai
+# '''
 
 [[plugins]]
 repo = 'nsf/gocode'

@@ -47,9 +47,10 @@ if has('vim_starting')
   call dein#call_hook('source')
   call dein#call_hook('post_source')
 
-  syntax enable
-  filetype plugin indent on
 endif
+
+syntax enable
+filetype plugin indent on
 
 """"""""""""""""""""""""""""""
 " 各種オプションの設定
@@ -59,8 +60,7 @@ call s:source_rc('color.vim')
 call s:source_rc('editing.vim')
 call s:source_rc('plugins_setting.vim')
 
-
 """"""""""""""""""""""""""""""
 
 " filetypeの自動検出(最後の方に書いた方がいいらしい)
-filetype plugin indent on
+" filetype plugin indent on

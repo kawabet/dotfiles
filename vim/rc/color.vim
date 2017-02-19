@@ -3,10 +3,9 @@
 " 構文毎に文字色を変化させる
 syntax enable
 
-" [Newest \- Vim Colors](http://vimcolors.com/)
 " カラースキーマの指定
-colorscheme desert
+colorscheme delek
 
-" colorscheme simple_dark
 " 行番号の色
 " highlight LineNr ctermfg=darkyellow
+highlight LineNr ctermfg=190
