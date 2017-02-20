@@ -122,4 +122,6 @@ nnoremap <silent> <space>gb :<C-u>Gblame<Enter>
 " [脱初心者を目指すVimmerにオススメしたいVimプラグインや\.vimrcの設定 \- Qiita](http://qiita.com/jnchito/items/5141b3b01bced9f7f48f)
 " grep検索の実行後にQuickFix Listを表示する
 autocmd QuickFixCmdPost *grep* cwindow
+" ステータス行に現在のgitブランチを表示する
+set statusline+=%{fugitive#statusline()}
 "-------------------------------------------------------------
