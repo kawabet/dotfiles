@@ -58,6 +58,7 @@ filetype plugin indent on
 call s:source_rc('basic.vim')
 call s:source_rc('color.vim')
 call s:source_rc('editing.vim')
+call s:source_rc('moving.vim')
 call s:source_rc('plugins_setting.vim')
 
 """"""""""""""""""""""""""""""

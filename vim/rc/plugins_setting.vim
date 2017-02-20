@@ -34,7 +34,7 @@ let g:syntastic_javascript_jslint_conf = "--white --undef --nomen --regexp --plu
 " 上記はデフォルト。上書きしたい場合に設定。
 
 " --------------------------------
-" emmet関連 
+" emmet関連
 " --------------------------------
 let g:user_emmet_mode = 'iv'
   let g:user_emmet_leader_key = '<C-Y>'
@@ -62,25 +62,6 @@ augroup END
 " Unit.vimの設定
 """"""""""""""""""""""""""""""
 " 入力モードで開始する
-" let g:unite_enable_start_insert=1
-" バッファ一覧
-" noremap <C-P> :Unite buffer<CR>
-" ファイル一覧
-" noremap <C-N> :Unite -buffer-name=file file<CR>
-" 最近使ったファイルの一覧
-" noremap <C-Z> :Unite file_mru<CR>
-" sourcesを「今開いているファイルのディレクトリ」とする
-" noremap :uff :<C-u>UniteWithBufferDir file -buffer-name=file<CR>
-" ウィンドウを分割して開く
-" au FileType unite nnoremap <silent> <buffer> <expr> <C-J> unite#do_action('split')
-" au FileType unite inoremap <silent> <buffer> <expr> <C-J> unite#do_action('split')
-" ウィンドウを縦に分割して開く
-" au FileType unite nnoremap <silent> <buffer> <expr> <C-K> unite#do_action('vsplit')
-" au FileType unite inoremap <silent> <buffer> <expr> <C-K> unite#do_action('vsplit')
-
-
-""" unite.vim
-" 入力モードで開始する
 let g:unite_enable_start_insert=1
 " バッファ一覧
 nnoremap <silent> <space>ub :<C-u>Unite buffer<CR>
@@ -107,9 +88,9 @@ au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
 " .mdファイルにMarkdownのハイライトを適用
 au BufRead,BufNewFile *.md set filetype=markdown
 
-"-------------------------------------------------------------
+""""""""""""""""""""""""""""""
 " fugitive.vim
-"-------------------------------------------------------------
+""""""""""""""""""""""""""""""
 " [dotfiles/\.vimrc\.plugins\_setting at 350f509530411d92ea77363ca8efb1745c2ab063 · yuroyoro/dotfiles](https://github.com/yuroyoro/dotfiles/blob/350f509530411d92ea77363ca8efb1745c2ab063/.vimrc.plugins_setting)
 nnoremap <silent> <space>gd :<C-u>Gdiff<Enter>
 nnoremap <silent> <space>gs :<C-u>Gstatus<Enter>
@@ -124,4 +105,38 @@ nnoremap <silent> <space>gb :<C-u>Gblame<Enter>
 autocmd QuickFixCmdPost *grep* cwindow
 " ステータス行に現在のgitブランチを表示する
 set statusline+=%{fugitive#statusline()}
-"-------------------------------------------------------------
+
+
+""""""""""""""""""""""""""""""
+" vim-go
+""""""""""""""""""""""""""""""
+" [fatih/vim\-go: Go development plugin for Vim](https://github.com/fatih/vim-go)
+" 実行
+au FileType go nmap <leader>r <Plug>(go-run)
+" ビルド
+au FileType go nmap <leader>b <Plug>(go-build)
+" テスト実行
+au FileType go nmap <leader>t <Plug>(go-test)
+" カバレッジ
+au FileType go nmap <leader>c <Plug>(go-coverage)
+
+" ウィンドウを横に分割してgodef
+au FileType go nmap <leader>ds <Plug>(go-def-split)
+" ウィンドウを縦に分割してgodef
+au FileType go nmap <leader>dv <Plug>(go-def-vertical)
+" 新規タブでgodef
+au FileType go nmap <leader>dt <Plug>(go-def-tab)
+" godocを開く
+au FileType go nmap <leader>gd <Plug>(go-doc)
+" ウィンドウを縦に分割してgodoc
+au FileType go nmap <leader>gv <Plug>(go-doc-vertical)
+" ブラウザでgodocを開く
+au FileType go nmap <leader>gb <Plug>(go-doc-browser)
+
+" interfaceの実装のリストを開く
+au FileType go nmap <leader>s <Plug>(go-implements)
+" 型情報を表示
+au FileType go nmap <leader>i <Plug>(go-info)
+" カーソル下をリネーム
+au FileType go nmap <leader>e <Plug>(go-rename)
+
