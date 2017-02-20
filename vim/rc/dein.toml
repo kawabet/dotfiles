@@ -17,6 +17,9 @@ repo = 'cespare/vim-toml'
 # Gitを便利に使う
 [[plugins]]
 repo = 'tpope/vim-fugitive'
+hook_add = '''
+
+'''
 
 [[plugins]]
 # Rails向けのコマンドを提供する
@@ -90,8 +93,16 @@ repo = 'KohPoll/vim-less'
 repo = 'plasticboy/vim-markdown'
 [[plugins]]
 repo = 'kannokanno/previm'
+
+# [Vim \- URL からブラウザオープン！ \- mk\-mode BLOG](http://www.mk-mode.com/octopress/2014/11/13/vim-open-browser-plugin/)
+# gx でカーソル下のURLをブラウザでOPENする
 [[plugins]]
 repo = 'tyru/open-browser.vim'
+hook_add = '''
+  let g:netrw_nogx = 1 " disable netrw's gx mapping.
+  nmap gx <Plug>(openbrowser-smart-search)
+  vmap gx <Plug>(openbrowser-smart-search)
+'''
 
 # 色々なカラースキーム
 # [[plugins]]

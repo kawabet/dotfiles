@@ -14,6 +14,8 @@ set noswapfile
 set nobackup
 " カーソルが何行目の何列目に置かれているかを表示する
 set ruler
+" 一行に長い文章を書いていても自動折り返しをしない
+set textwidth=0
 " コマンドラインに使われる画面上の行数
 set cmdheight=2
 " エディタウィンドウの末尾から2行目にステータスラインを常時表示させる
