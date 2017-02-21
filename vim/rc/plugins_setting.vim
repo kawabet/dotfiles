@@ -58,11 +58,15 @@ augroup EmmitVim
 augroup END
 
 " http://blog.remora.cx/2010/12/vim-ref-with-unite.html
+"[VimのUniteプラグインでファイル、バッファ、ブックマーク管理 \| karakaram\-blog](http://www.karakaram.com/unite#operation)
 """"""""""""""""""""""""""""""
 " Unit.vimの設定
 """"""""""""""""""""""""""""""
 " 入力モードで開始する
 let g:unite_enable_start_insert=1
+"最近開いたファイル履歴の保存数
+let g:unite_source_file_mru_limit = 50
+
 " バッファ一覧
 nnoremap <silent> <space>ub :<C-u>Unite buffer<CR>
 " ファイル一覧
@@ -75,6 +79,11 @@ nnoremap <silent> <space>um :<C-u>Unite file_mru<CR>
 nnoremap <silent> <space>uu :<C-u>Unite buffer file_mru<CR>
 " 全部乗せ
 nnoremap <silent> <space>ua :<C-u>UniteWithBufferDir -buffer-name=files buffer file_mru bookmark file<CR>
+"ブックマーク一覧
+nnoremap <silent> <space>uo :<C-u>Unite bookmark<CR>
+"ブックマークに追加
+nnoremap <silent> <space>ui :<C-u>UniteBookmarkAdd<CR>
+
 " ウィンドウを分割して開く
 au FileType unite nnoremap <silent> <buffer> <expr> <C-j> unite#do_action('split')
 au FileType unite inoremap <silent> <buffer> <expr> <C-j> unite#do_action('split')
