@@ -101,13 +101,13 @@ au BufRead,BufNewFile *.md set filetype=markdown
 " fugitive.vim
 """"""""""""""""""""""""""""""
 " [dotfiles/\.vimrc\.plugins\_setting at 350f509530411d92ea77363ca8efb1745c2ab063 · yuroyoro/dotfiles](https://github.com/yuroyoro/dotfiles/blob/350f509530411d92ea77363ca8efb1745c2ab063/.vimrc.plugins_setting)
-nnoremap <silent> <space>gd :<C-u>Gdiff<Enter>
-nnoremap <silent> <space>gs :<C-u>Gstatus<Enter>
-nnoremap <silent> <space>gl :<C-u>Glog<Enter>
-nnoremap <silent> <space>ga :<C-u>Gwrite<Enter>
-nnoremap <silent> <space>gc :<C-u>Gcommit<Enter>
-nnoremap <silent> <space>gC :<C-u>Git commit --amend<Enter>
-nnoremap <silent> <space>gb :<C-u>Gblame<Enter>
+nnoremap <silent> <leader>gd :<C-u>Gdiff<Enter>
+nnoremap <silent> <leader>gs :<C-u>Gstatus<Enter>
+nnoremap <silent> <leader>gl :<C-u>Glog<Enter>
+nnoremap <silent> <leader>ga :<C-u>Gwrite<Enter>
+nnoremap <silent> <leader>gc :<C-u>Gcommit<Enter>
+nnoremap <silent> <leader>gC :<C-u>Git commit --amend<Enter>
+nnoremap <silent> <leader>gb :<C-u>Gblame<Enter>
 
 " [脱初心者を目指すVimmerにオススメしたいVimプラグインや\.vimrcの設定 \- Qiita](http://qiita.com/jnchito/items/5141b3b01bced9f7f48f)
 " grep検索の実行後にQuickFix Listを表示する
@@ -120,6 +120,18 @@ set statusline+=%{fugitive#statusline()}
 " vim-go
 """"""""""""""""""""""""""""""
 " [fatih/vim\-go: Go development plugin for Vim](https://github.com/fatih/vim-go)
+" Settings
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_types = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
+
+let g:go_fmt_command = "goimports"
+let g:go_fmt_autosave = 1
+
+" Shortcut
 " 実行
 au FileType go nmap <leader>r <Plug>(go-run)
 " ビルド
