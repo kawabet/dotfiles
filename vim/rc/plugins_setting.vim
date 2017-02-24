@@ -59,7 +59,7 @@ augroup END
 " 入力モードで開始する
 let g:unite_enable_start_insert=1
 "最近開いたファイル履歴の保存数
-let g:unite_source_file_mru_limit = 50
+let g:unite_source_file_mru_limit = 20
 
 " バッファ一覧
 nnoremap <silent> <space>ub :<C-u>Unite buffer<CR>
@@ -70,9 +70,9 @@ nnoremap <silent> <space>ur :<C-u>Unite -buffer-name=register register<CR>
 " 最近使用したファイル一覧
 nnoremap <silent> <space>um :<C-u>Unite file_mru<CR>
 " 常用セット
-nnoremap <silent> <space>uu :<C-u>Unite buffer file_mru<CR>
+nnoremap <silent> <space>uu :<C-u>UniteWithBufferDir buffer file file_mru<CR>
 " 全部乗せ
-nnoremap <silent> <space>ua :<C-u>UniteWithBufferDir -buffer-name=files buffer file_mru bookmark file<CR>
+nnoremap <silent> <space>ua :<C-u>Unite -buffer-name=files buffer file_mru bookmark file<CR>
 " ブックマーク一覧
 nnoremap <silent> <space>uo :<C-u>Unite bookmark<CR>
 " ブックマークに追加
