@@ -1,11 +1,5 @@
 " プラグイン毎の設定 plugins
 
-" -------------------------------
-" Rsense
-" -------------------------------
-let g:rsenseHome = '/usr/local/lib/rsense-0.3'
-let g:rsenseUseOmniFunc = 1
-
 " --------------------------------
 " neocomplete.vim
 " --------------------------------
@@ -79,11 +73,10 @@ nnoremap <silent> <space>um :<C-u>Unite file_mru<CR>
 nnoremap <silent> <space>uu :<C-u>Unite buffer file_mru<CR>
 " 全部乗せ
 nnoremap <silent> <space>ua :<C-u>UniteWithBufferDir -buffer-name=files buffer file_mru bookmark file<CR>
-"ブックマーク一覧
+" ブックマーク一覧
 nnoremap <silent> <space>uo :<C-u>Unite bookmark<CR>
-"ブックマークに追加
+" ブックマークに追加
 nnoremap <silent> <space>ui :<C-u>UniteBookmarkAdd<CR>
-
 " ウィンドウを分割して開く
 au FileType unite nnoremap <silent> <buffer> <expr> <C-j> unite#do_action('split')
 au FileType unite inoremap <silent> <buffer> <expr> <C-j> unite#do_action('split')
@@ -94,6 +87,26 @@ au FileType unite inoremap <silent> <buffer> <expr> <C-l> unite#do_action('vspli
 au FileType unite nnoremap <silent> <buffer> <ESC><ESC> :q<CR>
 au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
 
+" [agとUnite\.vimで快適高速grep環境を手に入れる · THINKING MEGANE](http://blog.monochromegane.com/blog/2013/09/18/ag-and-unite/)
+" 大文字小文字を区別しない
+let g:unite_enable_ignore_case = 1
+let g:unite_enable_smart_case = 1
+" grep検索
+nnoremap <silent> <space>ugg :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
+" カーソル位置の単語をgrep検索
+nnoremap <silent> <space>ugc :<C-u>Unite grep:. -buffer-name=search-buffer<CR><C-R><C-W>
+" grep検索結果の再呼出
+nnoremap <silent> <space>ugr  :<C-u>UniteResume search-buffer<CR>
+
+" unite grep に ag(The Silver Searcher) を使う
+if executable('ag')
+  let g:unite_source_grep_command = 'ag'
+  let g:unite_source_grep_default_opts =
+        \ '-i --vimgrep --hidden --ignore ' .
+        \  '''.hg'' --ignore ''.svn'' --ignore ''.git'' --ignore ''.bzr'''
+  let g:unite_source_grep_recursive_opt = ''
+endif
+
 " .mdファイルにMarkdownのハイライトを適用
 au BufRead,BufNewFile *.md set filetype=markdown
 
@@ -101,13 +114,13 @@ au BufRead,BufNewFile *.md set filetype=markdown
 " fugitive.vim
 """"""""""""""""""""""""""""""
 " [dotfiles/\.vimrc\.plugins\_setting at 350f509530411d92ea77363ca8efb1745c2ab063 · yuroyoro/dotfiles](https://github.com/yuroyoro/dotfiles/blob/350f509530411d92ea77363ca8efb1745c2ab063/.vimrc.plugins_setting)
-nnoremap <silent> <leader>gd :<C-u>Gdiff<Enter>
-nnoremap <silent> <leader>gs :<C-u>Gstatus<Enter>
-nnoremap <silent> <leader>gl :<C-u>Glog<Enter>
-nnoremap <silent> <leader>ga :<C-u>Gwrite<Enter>
-nnoremap <silent> <leader>gc :<C-u>Gcommit<Enter>
-nnoremap <silent> <leader>gC :<C-u>Git commit --amend<Enter>
-nnoremap <silent> <leader>gb :<C-u>Gblame<Enter>
+nnoremap <silent> <space>gd :<C-u>Gdiff<Enter>
+nnoremap <silent> <space>gs :<C-u>Gstatus<Enter>
+nnoremap <silent> <space>gl :<C-u>Glog<Enter>
+nnoremap <silent> <space>ga :<C-u>Gwrite<Enter>
+nnoremap <silent> <space>gc :<C-u>Gcommit<Enter>
+nnoremap <silent> <space>gC :<C-u>Git commit --amend<Enter>
+nnoremap <silent> <space>gb :<C-u>Gblame<Enter>
 
 " [脱初心者を目指すVimmerにオススメしたいVimプラグインや\.vimrcの設定 \- Qiita](http://qiita.com/jnchito/items/5141b3b01bced9f7f48f)
 " grep検索の実行後にQuickFix Listを表示する

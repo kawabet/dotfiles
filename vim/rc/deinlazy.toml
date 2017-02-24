@@ -4,8 +4,16 @@
 repo = 'Shougo/neomru.vim'
 
 [[plugins]]
+repo = 'Shougo/tabpagebuffer.vim'
+
+[[plugins]]
 repo = 'Shougo/unite.vim'
-depends = 'neomru.vim'
+depends = ['neomru.vim', 'tabpagebuffer.vim']
+
+[[plugins]]
+repo = 'Shougo/vimproc.vim'
+build = 'make'
+on_source = ['unite.vim', 'vimshell.vim']
 
 [[plugins]]
 repo = 'Shougo/vimshell.vim'
@@ -16,7 +24,7 @@ hook_add = 'nmap [Space]s  <Plug>(vimshell_switch)'
 [[plugins]]
 repo = 'Shougo/context_filetype.vim'
 
-# コード補完
+# 言語
 [[plugins]]
 repo = 'davidhalter/jedi-vim'
 on_if = "!has('nvim')"
@@ -27,9 +35,6 @@ hook_source = '''
   let g:jedi#smart_auto_mappings = 0
   let g:jedi#show_call_signatures = 0
 '''
-
-[[plugins]]
-repo = 'marcus/rsense'
 
 [[plugins]]
 repo = 'fatih/vim-go'
@@ -52,3 +57,32 @@ hook_source = '''
   let g:neocomplete#enable_at_startup = 1
   " source ~/.vim/rc/plugins/neocomplete.rc.vim
 '''
+
+#JavaScriptシンタックス
+[[plugins]]
+repo = 'jelera/vim-javascript-syntax'
+
+[[plugins]]
+# Rails向けのコマンドを提供する
+repo = 'tpope/vim-rails'
+
+# emmet関連 http://qiita.com/alpaca_taichou/items/056a4c42fe7a928973e6
+# <C-Y>, (Ctrl-yの直後に,)でタグ展開
+# 使い方:http://motw.mods.jp/Vim/emmet-vim.html
+[[plugins]]
+repo = 'mattn/emmet-vim'
+[[plugins]]
+repo = 'mattn/webapi-vim'
+[[plugins]]
+repo = 'hail2u/vim-css3-syntax'
+[[plugins]]
+repo = 'kchmck/vim-coffee-script'
+
+# less用のsyntaxハイライト
+[[plugins]]
+repo = 'KohPoll/vim-less'
+
+# 自動で閉じる
+[[plugins]]
+repo = 'tpope/vim-endwise'
+

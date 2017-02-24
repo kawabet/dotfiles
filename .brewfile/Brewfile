@@ -54,6 +54,7 @@ tap homebrew/core
 brew apr
 brew apr-util
 brew autoconf
+brew automake
 brew bash
 brew bazaar
 brew cabextract
@@ -61,7 +62,6 @@ brew cairo
 brew cask
 brew cmake
 brew cscope
-brew ctags
 brew curl
 brew docker
 brew docker-machine
@@ -154,6 +154,9 @@ tap homebrew/versions
 
 tap rcmdnk/file
 brew brew-file
+
+tap universal-ctags/universal-ctags
+brew universal-ctags
 
 # Other Homebrew packages
 brew pt
