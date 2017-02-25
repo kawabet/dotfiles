@@ -27,29 +27,6 @@ let g:syntastic_javascript_checker = "jshint"
 let g:syntastic_javascript_jslint_conf = "--white --undef --nomen --regexp --plusplus --bitwise --newcap --sloppy --vars"
 " 上記はデフォルト。上書きしたい場合に設定。
 
-" --------------------------------
-" emmet関連
-" --------------------------------
-let g:user_emmet_mode = 'iv'
-  let g:user_emmet_leader_key = '<C-Y>'
-  let g:use_emmet_complete_tag = 1
-  let g:user_emmet_settings = {
-        \ 'lang' : 'ja',
-        \ 'html' : {
-        \   'filters' : 'html',
-        \ },
-        \ 'css' : {
-        \   'filters' : 'fc',
-        \ },
-        \ 'php' : {
-        \   'extends' : 'html',
-        \   'filters' : 'html',
-        \ },
-        \}
-augroup EmmitVim
-  autocmd!
-  autocmd FileType * let g:user_emmet_settings.indentation = '               '[:&tabstop]
-augroup END
 
 " http://blog.remora.cx/2010/12/vim-ref-with-unite.html
 "[VimのUniteプラグインでファイル、バッファ、ブックマーク管理 \| karakaram\-blog](http://www.karakaram.com/unite#operation)
@@ -61,22 +38,24 @@ let g:unite_enable_start_insert=1
 "最近開いたファイル履歴の保存数
 let g:unite_source_file_mru_limit = 20
 
+noremap [unite] <nop>
+map <space>u [unite]
 " バッファ一覧
-nnoremap <silent> <space>ub :<C-u>Unite buffer<CR>
+nnoremap <silent> [unite]b :<C-u>Unite buffer<CR>
 " ファイル一覧
-nnoremap <silent> <space>uf :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
+nnoremap <silent> [unite]f :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
 " レジスタ一覧
-nnoremap <silent> <space>ur :<C-u>Unite -buffer-name=register register<CR>
+nnoremap <silent> [unite]r :<C-u>Unite -buffer-name=register register<CR>
 " 最近使用したファイル一覧
-nnoremap <silent> <space>um :<C-u>Unite file_mru<CR>
+nnoremap <silent> [unite]m :<C-u>Unite file_mru<CR>
 " 常用セット
-nnoremap <silent> <space>uu :<C-u>UniteWithBufferDir buffer file file_mru<CR>
+nnoremap <silent> [unite]u :<C-u>Unite -buffer-name=files buffer_tab file file_mru<CR>
 " 全部乗せ
-nnoremap <silent> <space>ua :<C-u>Unite -buffer-name=files buffer file_mru bookmark file<CR>
+nnoremap <silent> [unite]a :<C-u>Unite -buffer-name=files buffer file_mru bookmark file<CR>
 " ブックマーク一覧
-nnoremap <silent> <space>uo :<C-u>Unite bookmark<CR>
+nnoremap <silent> [unite]o :<C-u>Unite bookmark<CR>
 " ブックマークに追加
-nnoremap <silent> <space>ui :<C-u>UniteBookmarkAdd<CR>
+nnoremap <silent> [unite]i :<C-u>UniteBookmarkAdd<CR>
 " ウィンドウを分割して開く
 au FileType unite nnoremap <silent> <buffer> <expr> <C-j> unite#do_action('split')
 au FileType unite inoremap <silent> <buffer> <expr> <C-j> unite#do_action('split')
@@ -92,11 +71,11 @@ au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
 let g:unite_enable_ignore_case = 1
 let g:unite_enable_smart_case = 1
 " grep検索
-nnoremap <silent> <space>ugg :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
+nnoremap <silent> [unite]g :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
 " カーソル位置の単語をgrep検索
-nnoremap <silent> <space>ugc :<C-u>Unite grep:. -buffer-name=search-buffer<CR><C-R><C-W>
+" nnoremap <silent> [unite]gc :<C-u>Unite grep:. -buffer-name=search-buffer<CR><C-R><C-W>
 " grep検索結果の再呼出
-nnoremap <silent> <space>ugr  :<C-u>UniteResume search-buffer<CR>
+nnoremap <silent> [unite]g  :<C-u>UniteResume search-buffer<CR>
 
 " unite grep に ag(The Silver Searcher) を使う
 if executable('ag')

@@ -58,26 +58,50 @@ hook_source = '''
   " source ~/.vim/rc/plugins/neocomplete.rc.vim
 '''
 
-#JavaScriptシンタックス
-[[plugins]]
-repo = 'jelera/vim-javascript-syntax'
-
-[[plugins]]
-# Rails向けのコマンドを提供する
-repo = 'tpope/vim-rails'
-
 # emmet関連 http://qiita.com/alpaca_taichou/items/056a4c42fe7a928973e6
 # <C-Y>, (Ctrl-yの直後に,)でタグ展開
 # 使い方:http://motw.mods.jp/Vim/emmet-vim.html
 [[plugins]]
 repo = 'mattn/emmet-vim'
+hook_add = '''
+  let g:user_emmet_mode = 'iv'
+  let g:user_emmet_leader_key = '<C-y>'
+  let g:use_emmet_complete_tag = 1
+  let g:user_emmet_settings = {
+          \ 'lang' : 'ja',
+          \ 'html' : {
+          \   'filters' : 'html',
+          \ },
+          \ 'css' : {
+          \   'filters' : 'fc',
+          \ },
+          \ 'php' : {
+          \   'extends' : 'html',
+          \   'filters' : 'html',
+          \ },
+          \}
+  augroup EmmitVim
+    autocmd!
+    autocmd FileType * let g:user_emmet_settings.indentation = '               '[:&tabstop]
+  augroup END
+'''
+
+# vimからHTTP GETやPOSTができる
 [[plugins]]
 repo = 'mattn/webapi-vim'
+
+# Rails向けのコマンドを提供する
+[[plugins]]
+repo = 'tpope/vim-rails'
+# JavaScriptシンタックス
+[[plugins]]
+repo = 'jelera/vim-javascript-syntax'
+# css3シンタックス
 [[plugins]]
 repo = 'hail2u/vim-css3-syntax'
+# coffe scriptシンタックス
 [[plugins]]
 repo = 'kchmck/vim-coffee-script'
-
 # less用のsyntaxハイライト
 [[plugins]]
 repo = 'KohPoll/vim-less'
@@ -85,4 +109,3 @@ repo = 'KohPoll/vim-less'
 # 自動で閉じる
 [[plugins]]
 repo = 'tpope/vim-endwise'
-

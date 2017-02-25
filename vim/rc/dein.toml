@@ -10,7 +10,7 @@ hook_add= '''
 	" 別ウィンドウで開く
 	nnoremap <space>fe :VimFilerExplore -split -winwidth=30 -find -no-quit<Cr>
 	" 現在のファイルのディレクトリで開く
-	nnoremap <space>ff :VimFilerCurrentDir<Cr>
+	nnoremap <space>ff :VimFilerBufferDir<Cr>
 	" プロジェクトホームで開く
 	nnoremap <space>fg :VimFiler -project<Cr>
 '''
@@ -40,22 +40,22 @@ repo = 'thinca/vim-ref'
 repo = 'yuku-t/vim-ref-ri'
 
 # メソッドの定義元へジャンプ
-[[plugins]]
-repo = 'szw/vim-tags'
+# plugins[[plugins]]
+# repo = 'szw/vim-tags'
 # open ctag in tab/vertical split
 # map <C-\> :tab split<CR>:exec(#tag #.expand(#<cword>#))<CR>
 # map <leader><C-\> :vsp <CR>:exec(#tag #.expand(#<cword>#))<CR>
 
 
 # コメントON/OFFを手軽に実行
-[[plugins]]
-repo = 'tomtom/tcomment_vim'
+# [[plugins]]
+# repo = 'tomtom/tcomment_vim'
 # シングルクオートとダブルクオートの入れ替え等
-[[plugins]]
-repo = 'tpope/vim-surround'
+# [[plugins]]
+# repo = 'tpope/vim-surround'
 # インデントに色を付けて見やすくする
-[[plugins]]
-repo = 'nathanaelkane/vim-indent-guides'
+# [[plugins]]
+# repo = 'nathanaelkane/vim-indent-guides'
 # ログファイルを色づけしてくれる
 [[plugins]]
 repo = 'vim-scripts/AnsiEsc.vim'

@@ -15,13 +15,13 @@ nmap y0 y^
 nmap yk y^
 
 " カーソルから行頭まで削除(インサートモード)
-inoremap <silent> <C-k> <Esc>lc^
+" inoremap <silent> <C-k> <Esc>lc^
 " カーソルから行末まで削除(インサートモード)
-inoremap <silent> <C-d> <Esc>lc$
+inoremap <silent> <C-k> <Esc>lc$
 " カーソルから行頭までヤンク(インサートモード)
-inoremap <silent> <C-y>0 <Esc>ly0<Insert>
+" inoremap <silent> <C-y>0 <Esc>ly0<Insert>
 " カーソルから行末までヤンク(インサートモード)
-inoremap <silent> <C-y>e <Esc>ly$<Insert>
+" inoremap <silent> <C-y>e <Esc>ly$<Insert>
 
 " 保存時に行末の空白を除去する
 autocmd BufWritePre * :%s/\s\+$//ge

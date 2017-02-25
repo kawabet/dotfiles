@@ -66,7 +66,7 @@ nnoremap sq :<C-u>q<CR>
 " タブを閉じる
 nnoremap sQ :<C-u>bd<CR>
 " 現在のタブで開いたバッファ一覧
-nnoremap sb :<C-u>Unite buffer_tab -buffer-name=file<CR>
+nnoremap sb :<C-u>Unite buffer_tab -buffer-name=files<CR>
 
 " 幅を増やす
 call submode#enter_with('bufmove', 'n', '', 's>', '<C-w>>')
