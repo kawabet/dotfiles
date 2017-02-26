@@ -63,5 +63,3 @@ call s:source_rc('plugins_setting.vim')
 
 """"""""""""""""""""""""""""""
 
-" filetypeの自動検出(最後の方に書いた方がいいらしい)
-" filetype plugin indent on

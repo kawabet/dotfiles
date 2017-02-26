@@ -7,8 +7,11 @@ repo = 'Shougo/neomru.vim'
 repo = 'Shougo/tabpagebuffer.vim'
 
 [[plugins]]
+repo = 'sorah/unite-ghq'
+
+[[plugins]]
 repo = 'Shougo/unite.vim'
-depends = ['neomru.vim', 'tabpagebuffer.vim']
+depends = ['neomru.vim', 'tabpagebuffer.vim', 'unite-ghq']
 
 [[plugins]]
 repo = 'Shougo/vimproc.vim'
@@ -63,6 +66,7 @@ hook_source = '''
 # 使い方:http://motw.mods.jp/Vim/emmet-vim.html
 [[plugins]]
 repo = 'mattn/emmet-vim'
+on_i = 1
 hook_add = '''
   let g:user_emmet_mode = 'iv'
   let g:user_emmet_leader_key = '<C-y>'
@@ -86,26 +90,28 @@ hook_add = '''
   augroup END
 '''
 
-# vimからHTTP GETやPOSTができる
-[[plugins]]
-repo = 'mattn/webapi-vim'
-
 # Rails向けのコマンドを提供する
 [[plugins]]
 repo = 'tpope/vim-rails'
+on_i = 1
 # JavaScriptシンタックス
 [[plugins]]
 repo = 'jelera/vim-javascript-syntax'
+on_i = 1
 # css3シンタックス
 [[plugins]]
 repo = 'hail2u/vim-css3-syntax'
+on_i = 1
 # coffe scriptシンタックス
 [[plugins]]
 repo = 'kchmck/vim-coffee-script'
+on_i = 1
 # less用のsyntaxハイライト
 [[plugins]]
 repo = 'KohPoll/vim-less'
+on_i = 1
 
 # 自動で閉じる
 [[plugins]]
 repo = 'tpope/vim-endwise'
+on_i = 1

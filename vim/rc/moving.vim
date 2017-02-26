@@ -43,8 +43,6 @@ nnoremap sp gT
 nnoremap sr <C-w>r
 " 大きさを揃える
 nnoremap s= <C-w>=
-" 次に移動
-nnoremap sw <C-w>w
 " 縦横最大化
 nnoremap so <C-w>_<C-w>|
 " 大きさを揃える
@@ -67,6 +65,21 @@ nnoremap sq :<C-u>q<CR>
 nnoremap sQ :<C-u>bd<CR>
 " 現在のタブで開いたバッファ一覧
 nnoremap sb :<C-u>Unite buffer_tab -buffer-name=files<CR>
+
+" 次に移動
+nnoremap <c-k> <c-w>w
+" 前に移動
+nnoremap <c-j> <c-w>W
+" 時計回りに回転
+nnoremap sw :call DWM_Rotate(0)<CR>
+" 反時計回りに回転
+nnoremap sW :call DWM_Rotate(1)<CR>
+" 新規ウィンドウ
+nmap <c-n> <Plug>DWMNew
+" ウィンドウを閉じる
+nmap <c-c> <Plug>DWMClose
+" 現在のウィンドウにフォーカス
+nmap <c-Space> <Plug>DWMFocus
 
 " 幅を増やす
 call submode#enter_with('bufmove', 'n', '', 's>', '<C-w>>')

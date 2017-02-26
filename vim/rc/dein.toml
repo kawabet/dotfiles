@@ -40,12 +40,14 @@ repo = 'thinca/vim-ref'
 repo = 'yuku-t/vim-ref-ri'
 
 # メソッドの定義元へジャンプ
-# plugins[[plugins]]
-# repo = 'szw/vim-tags'
-# open ctag in tab/vertical split
-# map <C-\> :tab split<CR>:exec(#tag #.expand(#<cword>#))<CR>
-# map <leader><C-\> :vsp <CR>:exec(#tag #.expand(#<cword>#))<CR>
-
+[[plugins]]
+repo = 'szw/vim-tags'
+# クラスのアウトラインを表示
+[[plugins]]
+repo = 'majutsushi/tagbar'
+hook_add = '''
+  nmap <C-r> :TagbarToggle<CR>
+'''
 
 # コメントON/OFFを手軽に実行
 # [[plugins]]
@@ -100,3 +102,15 @@ repo = 'kana/vim-submode'
 [[plugins]]
 repo = 'nsf/gocode'
 rtp = 'vim'
+
+# vimからHTTP GETやPOSTができる
+[[plugins]]
+repo = 'mattn/webapi-vim'
+
+# ウィンドウマネージャ
+# [【Vim】タイル型ウィンドウマネージャでタブいらず \| blog\.remora\.cx](http://blog.remora.cx/2013/05/use-dwm-in-vim.html)
+[[plugins]]
+repo = 'spolu/dwm.vim'
+hook_add = """
+  let g:dwm_map_keys=0
+"""
