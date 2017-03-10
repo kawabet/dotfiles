@@ -51,6 +51,7 @@ brew rsense
 tap homebrew/brewdler
 
 tap homebrew/core
+brew app-engine-go-64
 brew apr
 brew apr-util
 brew autoconf
@@ -76,12 +77,14 @@ brew git
 brew glib
 brew glide
 brew gmp
+brew gnu-sed
 brew gnutls
 brew go
 brew gobject-introspection
 brew gradle
 brew harfbuzz
 brew heroku
+brew hub
 brew icu4c
 brew imagemagick
 brew jasper --universal

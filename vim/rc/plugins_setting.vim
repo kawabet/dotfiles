@@ -12,21 +12,27 @@ endif
 let g:neocomplete#force_omni_input_patterns.ruby = '[^.*\t]\.\w*\|\h\w*::'
 
 " --------------------------------
-" rubocop
-" JavaScriptも
+" Syntastic
 " --------------------------------
 " syntastic_mode_mapをactiveにするとバッファ保存時にsyntasticが走る
 " active_filetypesに、保存時にsyntasticを走らせるファイルタイプを指定する
 let g:syntastic_mode_map = { 'mode': 'passive',
     \ 'active_filetypes': ['ruby', 'javascript'],
     \ 'passive_filetypes': [], }
+" Ruby
 let g:syntastic_ruby_checkers = ['rubocop']
+" JavaScript
+let g:syntastic_javascript_checkers = ["eslint"]
+" エラーにsignを表示
 let g:syntastic_enable_signs=1
+" location listを自動的に表示しない
 let g:syntastic_auto_loc_list=2
-let g:syntastic_javascript_checker = "jshint"
-let g:syntastic_javascript_jslint_conf = "--white --undef --nomen --regexp --plusplus --bitwise --newcap --sloppy --vars"
-" 上記はデフォルト。上書きしたい場合に設定。
-
+" 常にチェック結果をlocation listに反映させる
+let g:syntastic_always_populate_loc_list = 1
+" ファイルを開いた時にチェックを実行する
+let g:syntastic_check_on_open = 1
+" :wq で終了する時はチェックしない
+let g:syntastic_check_on_wq = 0
 
 " http://blog.remora.cx/2010/12/vim-ref-with-unite.html
 "[VimのUniteプラグインでファイル、バッファ、ブックマーク管理 \| karakaram\-blog](http://www.karakaram.com/unite#operation)
@@ -57,11 +63,11 @@ nnoremap <silent> [unite]o :<C-u>Unite bookmark<CR>
 " ブックマークに追加
 nnoremap <silent> [unite]i :<C-u>UniteBookmarkAdd<CR>
 " ウィンドウを分割して開く
-au FileType unite nnoremap <silent> <buffer> <expr> <C-l> unite#do_action('split')
-au FileType unite inoremap <silent> <buffer> <expr> <C-l> unite#do_action('split')
+au FileType unite nnoremap <silent> <buffer> <expr> <C-j> unite#do_action('split')
+au FileType unite inoremap <silent> <buffer> <expr> <C-j> unite#do_action('split')
 " ウィンドウを縦に分割して開く
-au FileType unite nnoremap <silent> <buffer> <expr> <C-j> unite#do_action('vsplit')
-au FileType unite inoremap <silent> <buffer> <expr> <C-j> unite#do_action('vsplit')
+au FileType unite nnoremap <silent> <buffer> <expr> <C-l> unite#do_action('vsplit')
+au FileType unite inoremap <silent> <buffer> <expr> <C-l> unite#do_action('vsplit')
 " ESCキーを2回押すと終了する
 au FileType unite nnoremap <silent> <buffer> <ESC><ESC> :q<CR>
 au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
@@ -71,11 +77,11 @@ au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
 let g:unite_enable_ignore_case = 1
 let g:unite_enable_smart_case = 1
 " grep検索
-nnoremap <silent> [unite]g :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
+nnoremap <silent> [unite]gg :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
 " カーソル位置の単語をgrep検索
-" nnoremap <silent> [unite]gc :<C-u>Unite grep:. -buffer-name=search-buffer<CR><C-R><C-W>
+nnoremap <silent> [unite]gc :<C-u>Unite grep:. -buffer-name=search-buffer<CR><C-R><C-W><CR>
 " grep検索結果の再呼出
-nnoremap <silent> [unite]g  :<C-u>UniteResume search-buffer<CR>
+nnoremap <silent> [unite]gr :<C-u>UniteResume search-buffer<CR>
 
 " unite grep に ag(The Silver Searcher) を使う
 if executable('ag')
@@ -93,13 +99,15 @@ au BufRead,BufNewFile *.md set filetype=markdown
 " fugitive.vim
 """"""""""""""""""""""""""""""
 " [dotfiles/\.vimrc\.plugins\_setting at 350f509530411d92ea77363ca8efb1745c2ab063 · yuroyoro/dotfiles](https://github.com/yuroyoro/dotfiles/blob/350f509530411d92ea77363ca8efb1745c2ab063/.vimrc.plugins_setting)
-nnoremap <silent> <space>gd :<C-u>Gdiff<Enter>
-nnoremap <silent> <space>gs :<C-u>Gstatus<Enter>
-nnoremap <silent> <space>gl :<C-u>Glog<Enter>
-nnoremap <silent> <space>ga :<C-u>Gwrite<Enter>
-nnoremap <silent> <space>gc :<C-u>Gcommit<Enter>
-nnoremap <silent> <space>gC :<C-u>Git commit --amend<Enter>
-nnoremap <silent> <space>gb :<C-u>Gblame<Enter>
+noremap [fugitive] <nop>
+map <space>g [fugitive]
+nnoremap <silent> [fugitive]d :<C-u>Gdiff<Enter>
+nnoremap <silent> [fugitive]s :<C-u>Gstatus<Enter>
+nnoremap <silent> [fugitive]l :<C-u>Glog<Enter>
+nnoremap <silent> [fugitive]a :<C-u>Gwrite<Enter>
+nnoremap <silent> [fugitive]c :<C-u>Gcommit<Enter>
+nnoremap <silent> [fugitive]C :<C-u>Git commit --amend<Enter>
+nnoremap <silent> [fugitive]b :<C-u>Gblame<Enter>
 
 " [脱初心者を目指すVimmerにオススメしたいVimプラグインや\.vimrcの設定 \- Qiita](http://qiita.com/jnchito/items/5141b3b01bced9f7f48f)
 " grep検索の実行後にQuickFix Listを表示する

@@ -109,8 +109,8 @@ repo = 'mattn/webapi-vim'
 
 # ウィンドウマネージャ
 # [【Vim】タイル型ウィンドウマネージャでタブいらず \| blog\.remora\.cx](http://blog.remora.cx/2013/05/use-dwm-in-vim.html)
-[[plugins]]
-repo = 'spolu/dwm.vim'
-hook_add = """
-  let g:dwm_map_keys=0
-"""
+# [[plugins]]
+# repo = 'spolu/dwm.vim'
+# hook_add = """
+#   let g:dwm_map_keys=0
+# """

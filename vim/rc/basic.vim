@@ -10,7 +10,6 @@ set encoding=utf-8
 set fileformats=unix,dos,mac
 " タグファイルの指定(でもタグジャンプは使ったことがない)
 set tags=~/.tags
-set tags+=./tags
 " スワップファイルは使わない(ときどき面倒な警告が出るだけで役に立ったことがない)
 set noswapfile
 " バックアップとらない
@@ -34,6 +33,7 @@ set showcmd
 " バッファで開いているファイルのディレクトリでエクスクローラを開始する(でもエクスプローラって使ってない)
 set browsedir=buffer
 " 小文字のみで検索したときに大文字小文字を無視する
+set ignorecase
 set smartcase
 " 検索結果をハイライト表示する
 set hlsearch

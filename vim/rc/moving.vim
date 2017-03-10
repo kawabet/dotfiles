@@ -70,16 +70,16 @@ nnoremap sb :<C-u>Unite buffer_tab -buffer-name=files<CR>
 nnoremap <c-k> <c-w>w
 " 前に移動
 nnoremap <c-j> <c-w>W
-" 時計回りに回転
-nnoremap sw :call DWM_Rotate(1)<CR>
-" 反時計回りに回転
-nnoremap sW :call DWM_Rotate(0)<CR>
-" 新規ウィンドウ
-nmap <c-n> <Plug>DWMNew
-" ウィンドウを閉じる
-nmap <c-c> <Plug>DWMClose
-" 現在のウィンドウにフォーカス
-nmap <c-Space> <Plug>DWMFocus
+" " 時計回りに回転
+" nnoremap sw :call DWM_Rotate(1)<CR>
+" " 反時計回りに回転
+" nnoremap sW :call DWM_Rotate(0)<CR>
+" " 新規ウィンドウ
+" nmap <c-n> <Plug>DWMNew
+" " ウィンドウを閉じる
+" nmap <c-c> <Plug>DWMClose
+" " 現在のウィンドウにフォーカス
+" nmap <c-Space> <Plug>DWMFocus
 
 " 幅を増やす
 call submode#enter_with('bufmove', 'n', '', 's>', '<C-w>>')

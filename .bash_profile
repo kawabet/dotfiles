@@ -40,3 +40,16 @@ fi
 ### neovim
 export XDG_CONFIG_HOME="$HOME/.config"
 export TERM=xterm-256color
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f ~/workspace/google-cloud-sdk/path.bash.inc ]; then
+  source '~/workspace/google-cloud-sdk/path.bash.inc'
+fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f ~/workspace/google-cloud-sdk/completion.bash.inc ]; then
+  source '~/workspace/google-cloud-sdk/completion.bash.inc'
+fi
+
+# [github/hub: hub helps you win at git\.](https://github.com/github/hub)
+eval "$(hub alias -s)"
