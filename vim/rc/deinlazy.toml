@@ -10,8 +10,11 @@ repo = 'Shougo/tabpagebuffer.vim'
 repo = 'sorah/unite-ghq'
 
 [[plugins]]
+repo = 'pasela/unite-webcolorname'
+
+[[plugins]]
 repo = 'Shougo/unite.vim'
-depends = ['neomru.vim', 'tabpagebuffer.vim', 'unite-ghq']
+depends = ['neomru.vim', 'tabpagebuffer.vim', 'unite-ghq', 'unite-webcolorname']
 
 [[plugins]]
 repo = 'Shougo/vimproc.vim'
@@ -60,6 +63,37 @@ hook_source = '''
   let g:neocomplete#enable_at_startup = 1
   " source ~/.vim/rc/plugins/neocomplete.rc.vim
 '''
+
+# スニペット
+# [Vimのneosnippetで自分用snippetファイルを追加したい \- 300億円欲しい](http://gg-hogehoge.hatenablog.com/entry/2014/04/05/230043)
+[[plugins]]
+repo = 'Shougo/neosnippet'
+depends = ['neosnippet-snippets', 'context_filetype.vim']
+on_event = 'InsertCharPre'
+on_ft = 'snippet'
+hook_add = '''
+  " Plugin key-mappings.
+  imap <C-s>     <Plug>(neosnippet_expand_or_jump)
+  smap <C-s>     <Plug>(neosnippet_expand_or_jump)
+  xmap <C-s>     <Plug>(neosnippet_expand_target)
+
+  " SuperTab like snippets behavior.
+  imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+  \ "\<Plug>(neosnippet_expand_or_jump)"
+  \: pumvisible() ? "\<C-n>" : "\<TAB>"
+  smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+  \ "\<Plug>(neosnippet_expand_or_jump)"
+  \: "\<TAB>"
+
+  " For snippet_complete marker.
+  if has('conceal')
+    set conceallevel=2 concealcursor=i
+  endif
+
+  let g:neosnippet#snippets_directory = '~/.vim/snippets'
+'''
+[[plugins]]
+repo = 'Shougo/neosnippet-snippets'
 
 # emmet関連 http://qiita.com/alpaca_taichou/items/056a4c42fe7a928973e6
 # <C-Y>, (Ctrl-yの直後に,)でタグ展開
@@ -111,7 +145,26 @@ on_i = 1
 repo = 'KohPoll/vim-less'
 on_i = 1
 
+# カラーコードの色をハイライトとして表示する
+[[plugins]]
+repo   = 'lilydjwg/colorizer'
+on_cmd = ['ColorToggle', 'ColorHighlight', 'ColorClear']
+
 # 自動で閉じる
 [[plugins]]
 repo = 'tpope/vim-endwise'
 on_i = 1
+
+# javascript importを自動挿入
+[[plugins]]
+repo = 'galooshi/vim-import-js'
+on_ft = 'javascript'
+on_i = 1
+
+# JavaScriptコード補完
+repo = 'marijnh/tern_for_vim'
+on_ft = 'javascript'
+on_i = 1
+hook_add = '''
+
+'''

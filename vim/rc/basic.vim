@@ -8,8 +8,9 @@ let mapleader = ","
 set encoding=utf-8
 " 想定される改行コードの指定する
 set fileformats=unix,dos,mac
-" タグファイルの指定(でもタグジャンプは使ったことがない)
+" タグファイルの指定
 set tags=~/.tags
+set tags+=~/tags
 " スワップファイルは使わない(ときどき面倒な警告が出るだけで役に立ったことがない)
 set noswapfile
 " バックアップとらない

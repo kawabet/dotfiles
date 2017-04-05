@@ -63,6 +63,7 @@ brew cairo
 brew cask
 brew cmake
 brew cscope
+brew ctags
 brew curl
 brew docker
 brew docker-machine
@@ -159,7 +160,6 @@ tap rcmdnk/file
 brew brew-file
 
 tap universal-ctags/universal-ctags
-brew universal-ctags
 
 # Other Homebrew packages
 brew pt

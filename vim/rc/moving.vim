@@ -94,3 +94,8 @@ call submode#map('bufmove', 'n', '', '+', '<C-w>+')
 call submode#enter_with('bufmove', 'n', '', 's-', '<C-w>-')
 call submode#map('bufmove', 'n', '', '-', '<C-w>-')
 
+" [neovimのterminal emulatorが便利すぎた \- tsub’s blog](http://tsub.hatenablog.com/entry/2016/07/02/220823)
+" ESCでterminalをcommand modeにする
+if has('nvim')
+  tnoremap <silent> <ESC> <C-\><C-n>
+endif

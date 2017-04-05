@@ -77,11 +77,17 @@ au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
 let g:unite_enable_ignore_case = 1
 let g:unite_enable_smart_case = 1
 " grep検索
-nnoremap <silent> [unite]gg :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
+nnoremap <silent> [unite]g :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
 " カーソル位置の単語をgrep検索
-nnoremap <silent> [unite]gc :<C-u>Unite grep:. -buffer-name=search-buffer<CR><C-R><C-W><CR>
+nnoremap <silent> [unite]s :<C-u>Unite grep:. -buffer-name=search-buffer<CR><C-R><C-W><CR>
 " grep検索結果の再呼出
-nnoremap <silent> [unite]gr :<C-u>UniteResume search-buffer<CR>
+nnoremap <silent> [unite]v :<C-u>UniteResume search-buffer<CR>
+
+" Uniteで色を見ながら選択
+nnoremap <silent> [unite]c :<C-u>Unite webcolorname<CR>
+
+" スニペットを表示
+nnoremap <silent> [unite]q :<C-u>Unite neosnippet<CR>
 
 " unite grep に ag(The Silver Searcher) を使う
 if executable('ag')
@@ -91,6 +97,7 @@ if executable('ag')
         \  '''.hg'' --ignore ''.svn'' --ignore ''.git'' --ignore ''.bzr'''
   let g:unite_source_grep_recursive_opt = ''
 endif
+
 
 " .mdファイルにMarkdownのハイライトを適用
 au BufRead,BufNewFile *.md set filetype=markdown

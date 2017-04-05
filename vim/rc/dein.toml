@@ -13,6 +13,9 @@ hook_add= '''
 	nnoremap <space>ff :VimFilerBufferDir<Cr>
 	" プロジェクトホームで開く
 	nnoremap <space>fg :VimFiler -project<Cr>
+
+  " Two columns of indentation.
+  let g:vimfiler_tree_indentation = 2
 '''
 # ファイルをtree表示してくれる
 # [[plugins]]
@@ -25,9 +28,14 @@ repo = 'cespare/vim-toml'
 # Gitを便利に使う
 [[plugins]]
 repo = 'tpope/vim-fugitive'
-hook_add = '''
 
-'''
+# cs"'みたいな
+[[plugins]]
+repo = 'tpope/vim-surround'
+
+# vim-commentary gcでコメントアウト
+[[plugins]]
+repo = 'tpope/vim-commentary'
 
 # 静的解析
 [[plugins]]
@@ -87,13 +95,13 @@ hook_add = '''
 '''
 
 # 色々なカラースキーム
-# [[plugins]]
-# repo = 'flazz/vim-colorschemes'
-# hook_add = '''
-#   " [dein\.vimによるプラグイン管理のマイベストプラクティス \- Qiita](http://qiita.com/kawaz/items/ee725f6214f91337b42b)
-#   " set background=dark
-#   " au MyAutoGrp VimEnter * nested colorscheme monokai
-# '''
+[[plugins]]
+repo = 'flazz/vim-colorschemes'
+hook_add = '''
+  " [dein\.vimによるプラグイン管理のマイベストプラクティス \- Qiita](http://qiita.com/kawaz/items/ee725f6214f91337b42b)
+  " set background=dark
+  " au MyAutoGrp VimEnter * nested colorscheme monokai
+'''
 
 # サブモードを作る
 [[plugins]]
@@ -107,6 +115,16 @@ rtp = 'vim'
 [[plugins]]
 repo = 'mattn/webapi-vim'
 
+# ステータスラインを良い感じにする
+[[plugins]]
+repo = 'vim-airline/vim-airline'
+[[plugins]]
+repo = 'vim-airline/vim-airline-themes'
+hook_add = '''
+
+'''
+
+
 # ウィンドウマネージャ
 # [【Vim】タイル型ウィンドウマネージャでタブいらず \| blog\.remora\.cx](http://blog.remora.cx/2013/05/use-dwm-in-vim.html)
 # [[plugins]]
@@ -114,3 +132,4 @@ repo = 'mattn/webapi-vim'
 # hook_add = """
 #   let g:dwm_map_keys=0
 # """
+

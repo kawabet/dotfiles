@@ -1,0 +1,14 @@
+snippet     describe
+options     head
+    describe('${1:#TestMethod}', () => {
+      it('${2:#TestContent}', () => {
+        ${0:// code}
+      });
+    });
+
+snippet     it
+options     head
+    it('${1:#TestContent}', () => {
+      ${0:// code}
+    });
+
