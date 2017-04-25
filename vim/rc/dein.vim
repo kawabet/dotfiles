@@ -32,7 +32,7 @@ if dein#load_state(s:dein_cache_dir)
     call dein#load_toml(s:toml_dir . '/dein.toml', {'lazy': 0})
     call dein#load_toml(s:toml_dir . '/deinlazy.toml', {'lazy': 1})
     if has('nvim')
-        call dein#load_toml(s:toml_dir . '/deineo.toml', {'lazy': 1})
+        call dein#load_toml(s:toml_dir . '/deineo.toml', {'lazy': 0})
     endif
 
     if dein#tap('deoplete.nvim') && has('nvim')

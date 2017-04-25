@@ -15,6 +15,7 @@ cask diskwave
 cask dropbox
 cask eclipse-java
 cask evernote
+cask firealpaca
 cask firefox
 cask google-chrome
 cask google-japanese-ime
@@ -46,7 +47,6 @@ tap d12frosted/emacs-plus
 brew emacs-plus
 
 tap homebrew/boneyard
-brew rsense
 
 tap homebrew/brewdler
 
@@ -162,6 +162,7 @@ brew brew-file
 tap universal-ctags/universal-ctags
 
 # Other Homebrew packages
+brew rsense
 brew pt
 
 # App Store applications

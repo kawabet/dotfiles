@@ -29,6 +29,7 @@ repo = 'cespare/vim-toml'
 [[plugins]]
 repo = 'tpope/vim-fugitive'
 
+# シングルクオートとダブルクオートの入れ替え等
 # cs"'みたいな
 [[plugins]]
 repo = 'tpope/vim-surround'
@@ -40,6 +41,11 @@ repo = 'tpope/vim-commentary'
 # 静的解析
 [[plugins]]
 repo = 'scrooloose/syntastic'
+hook_add='''
+  " You shouldn't use 'tsc' checker.
+  let g:syntastic_typescript_checkers = ['tsuquyomi']
+'''
+
 
 # ドキュメント参照
 [[plugins]]
@@ -60,9 +66,6 @@ hook_add = '''
 # コメントON/OFFを手軽に実行
 # [[plugins]]
 # repo = 'tomtom/tcomment_vim'
-# シングルクオートとダブルクオートの入れ替え等
-# [[plugins]]
-# repo = 'tpope/vim-surround'
 # インデントに色を付けて見やすくする
 # [[plugins]]
 # repo = 'nathanaelkane/vim-indent-guides'

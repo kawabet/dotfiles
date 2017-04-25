@@ -145,6 +145,26 @@ on_i = 1
 repo = 'KohPoll/vim-less'
 on_i = 1
 
+# TypeScript
+[[plugins]]
+repo='leafgarland/typescript-vim'
+on_ft='typescript'
+on_i = 1
+# [TypeScriptのTSServerとVim plugin \- Qiita](http://qiita.com/Quramy/items/e0f004695e8bcda7604e)
+[[plugins]]
+repo='Quramy/tsuquyomi'
+on_ft='typescript'
+on_i = 1
+hook_add='''
+  let g:tsuquyomi_disable_quickfix = 1
+'''
+
+# quickfixのエラー箇所を表示
+[[plugins]]
+repo='cohama/vim-hier'
+on_ft='typescript'
+on_i = 1
+
 # カラーコードの色をハイライトとして表示する
 [[plugins]]
 repo   = 'lilydjwg/colorizer'
@@ -164,7 +184,7 @@ on_i = 1
 # JavaScriptコード補完
 repo = 'marijnh/tern_for_vim'
 on_ft = 'javascript'
-on_i = 1
+build = 'npm install'
 hook_add = '''
 
 '''
