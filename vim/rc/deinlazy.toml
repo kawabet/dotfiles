@@ -156,14 +156,14 @@ repo='Quramy/tsuquyomi'
 on_ft='typescript'
 on_i = 1
 hook_add='''
-  let g:tsuquyomi_disable_quickfix = 1
+  " let g:tsuquyomi_disable_quickfix = 1
 '''
 
 # quickfixのエラー箇所を表示
-[[plugins]]
-repo='cohama/vim-hier'
-on_ft='typescript'
-on_i = 1
+# [[plugins]]
+# repo='cohama/vim-hier'
+# on_ft='typescript'
+# on_i = 1
 
 # カラーコードの色をハイライトとして表示する
 [[plugins]]
@@ -185,6 +185,6 @@ on_i = 1
 repo = 'marijnh/tern_for_vim'
 on_ft = 'javascript'
 build = 'npm install'
-hook_add = '''
 
-'''
+
+

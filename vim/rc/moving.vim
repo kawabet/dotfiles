@@ -11,12 +11,12 @@ nnoremap <Down> gj
 nnoremap <Up>   gk
 
 " 0, 9で行頭、行末へ
-nmap <C-a> ^
-" nmap 0 ^
-nmap <C-e> $
+" nmap <C-a> ^
+nmap 0 ^
+nmap 9 $
 " insert mode での移動
-inoremap  <C-e> <END>
-inoremap  <C-a> <HOME>
+" inoremap  <C-e> <END>
+" inoremap  <C-a> <HOME>
 " インサートモードでもhjklで移動（Ctrl押すけどね）
 inoremap <C-j> <Down>
 inoremap <C-k> <Up>

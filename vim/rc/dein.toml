@@ -7,12 +7,12 @@ repo = 'Shougo/dein.vim'
 repo = 'Shougo/vimfiler.vim'
 hook_add= '''
   let g:vimfiler_as_default_explorer = 1
-	" 別ウィンドウで開く
-	nnoremap <space>fe :VimFilerExplore -split -winwidth=30 -find -no-quit<Cr>
-	" 現在のファイルのディレクトリで開く
-	nnoremap <space>ff :VimFilerBufferDir<Cr>
-	" プロジェクトホームで開く
-	nnoremap <space>fg :VimFiler -project<Cr>
+  " 別ウィンドウで開く
+  nnoremap <space>fe :VimFilerExplore -split -winwidth=30 -find -no-quit<Cr>
+  " 現在のファイルのディレクトリで開く
+  nnoremap <space>ff :VimFilerBufferDir<Cr>
+  " プロジェクトホームで開く
+  nnoremap <space>fg :VimFiler -project<Cr>
 
   " Two columns of indentation.
   let g:vimfiler_tree_indentation = 2
@@ -39,13 +39,21 @@ repo = 'tpope/vim-surround'
 repo = 'tpope/vim-commentary'
 
 # 静的解析
+# [[plugins]]
+# repo = 'vim-syntastic/syntastic'
+# hook_add='''
+#   " You shouldn't use 'tsc' checker.
+#   let g:syntastic_typescript_checkers=['tsuquyomi']
+# '''
+# [VimでESLintとFlowを使うためにNeomakeからALEに乗り換える \- Qiita](http://qiita.com/zaki-yama/items/6bcc24469d06acdf8643)
 [[plugins]]
-repo = 'scrooloose/syntastic'
+repo='w0rp/ale'
 hook_add='''
-  " You shouldn't use 'tsc' checker.
-  let g:syntastic_typescript_checkers = ['tsuquyomi']
+  let g:ale_statusline_format = ['E%d', 'W%d', '']
+  let g:ale_linters = {'typescript': ['tsuquyomi']}
+  nmap <silent> <space>j <Plug>(ale_next_wrap)
+  nmap <silent> <space>k <Plug>(ale_previous_wrap)
 '''
-
 
 # ドキュメント参照
 [[plugins]]
@@ -63,12 +71,6 @@ hook_add = '''
   nmap <C-r> :TagbarToggle<CR>
 '''
 
-# コメントON/OFFを手軽に実行
-# [[plugins]]
-# repo = 'tomtom/tcomment_vim'
-# インデントに色を付けて見やすくする
-# [[plugins]]
-# repo = 'nathanaelkane/vim-indent-guides'
 # ログファイルを色づけしてくれる
 [[plugins]]
 repo = 'vim-scripts/AnsiEsc.vim'
@@ -106,6 +108,9 @@ hook_add = '''
   " au MyAutoGrp VimEnter * nested colorscheme monokai
 '''
 
+# カラースキーム
+# repo= 'kawabet/vim-luna'
+
 # サブモードを作る
 [[plugins]]
 repo = 'kana/vim-submode'
@@ -124,6 +129,7 @@ repo = 'vim-airline/vim-airline'
 [[plugins]]
 repo = 'vim-airline/vim-airline-themes'
 hook_add = '''
+  let g:airline_theme='term'
 
 '''
 
