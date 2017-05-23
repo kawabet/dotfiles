@@ -89,6 +89,7 @@ brew hub
 brew icu4c
 brew imagemagick
 brew jasper --universal
+brew jemalloc
 brew jenkins
 brew jpeg --universal
 brew jq
@@ -100,10 +101,13 @@ brew libicns --universal
 brew libpng --universal
 brew librsvg
 brew libtasn1 --universal
+brew libtermkey
 brew libtiff --universal
 brew libtool --universal
 brew libusb --universal
 brew libusb-compat --universal
+brew libuv
+brew libvterm
 brew libyaml
 brew little-cms2 --universal
 brew macvim
@@ -112,6 +116,7 @@ brew mas
 brew maven
 brew memcached
 brew mongodb
+brew msgpack
 brew mysql
 brew net-snmp
 brew nettle
@@ -145,6 +150,7 @@ brew subversion
 brew the_silver_searcher
 brew tmux
 brew tree
+brew unibilium
 brew unrar
 brew vim --with-lua
 brew webp --universal
@@ -156,14 +162,17 @@ brew zsh
 
 tap homebrew/versions
 
+tap neovim/neovim
+brew neovim
+
 tap rcmdnk/file
 brew brew-file
 
 tap universal-ctags/universal-ctags
 
 # Other Homebrew packages
-brew rsense
 brew pt
+brew rsense
 
 # App Store applications
 appstore 836505650 Battery Monitor (2.4)

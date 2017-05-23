@@ -1,0 +1,36 @@
+snippet     maps
+abbr        const mapStateToProps = (state) => {...}
+options     head
+  const mapStateToProps = (${1:state: ReduxState}) => {
+    return {
+      ${2:state: state.anyState}
+    }
+  }
+
+snippet     mapd
+abbr        const mapDispatchToProps = (dispatch) => {...}
+options     head
+  const mapDispatchToProps = (dispatch: Dispatch<ReduxAction>, ownProps: RouteComponentProps<{myParams: string}>) => {
+    console.log(ownProps.match.params.myParams)
+    return {
+      actions: new ActionDispatcher(dispatch)
+    }
+  }
+
+snippet     actd
+abbr        export class ActionDispatcher {...}
+options     head
+  export class ActionDispatcher {
+    constructor(private dispatch: (action: ReduxAction) => void) {}
+
+  }
+
+snippet     conn
+abbr        export default connect(mapStateToProps, mapDispatchToProps)(Component)
+options     head
+  export default connect(mapStateToProps, mapDispatchToProps)(${1:Component})
+
+snippet     never
+abbr        const _exhaustiveCheck: never = action
+options     head
+  const _exhaustiveCheck: never = ${0:action}

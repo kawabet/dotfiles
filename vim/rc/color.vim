@@ -9,14 +9,23 @@ syntax enable
 " colorscheme iceberg
 " colorscheme hybrid_material
 " colorscheme Tomorrow-Night-Eighties
-colorscheme luna-term
+
+if has('gui_running')
+  colorscheme luna
+else
+  colorscheme luna-term
+  " コメントを濃い緑にする
+  highlight Comment ctermfg=darkgreen guifg=darkgreen
+endif
+
 
 " 行番号の色
 " highlight LineNr ctermfg=darkyellow
-highlight LineNr ctermfg=190
+" highlight LineNr ctermfg=190
 
-" コメントを濃い緑にする
-highlight Comment ctermfg=darkgreen guifg=darkgreen
+" 背景色を黒にする
+" highlight Normal guibg=Black guifg=White
+
 
 augroup myStatusLine
   autocmd! ColorScheme * highlight StatusLine guibg=White guifg=Black

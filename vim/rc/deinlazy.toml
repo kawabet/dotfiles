@@ -118,7 +118,7 @@ hook_add = '''
           \   'filters' : 'html',
           \ },
           \}
-  augroup EmmitVim
+  augroup EmmetVim
     autocmd!
     autocmd FileType * let g:user_emmet_settings.indentation = '               '[:&tabstop]
   augroup END
@@ -159,6 +159,10 @@ hook_add='''
   " let g:tsuquyomi_disable_quickfix = 1
 '''
 
+[[plugins]]
+repo = 'evanmiller/nginx-vim-syntax'
+on_ft = 'nginx'
+
 # quickfixのエラー箇所を表示
 # [[plugins]]
 # repo='cohama/vim-hier'
@@ -186,5 +190,9 @@ repo = 'marijnh/tern_for_vim'
 on_ft = 'javascript'
 build = 'npm install'
 
-
-
+# Gist
+repo = 'lambdalisue/vim-gista'
+on_cmd = 'Gista'
+hook_add = '''
+  let g:gista#github_user = 'kawabet'
+'''
