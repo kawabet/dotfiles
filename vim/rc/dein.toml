@@ -1,21 +1,41 @@
 [[plugins]]
 repo = 'Shougo/dein.vim'
-
 [[plugins]]
 # ディレクトリからファイルを選択
 # http://qiita.com/0829/items/261225a51439776b36bf
 repo = 'Shougo/vimfiler.vim'
 hook_add= '''
+  " [Neovimはじめました & 2016年vimrc大掃除](http://blog.muuny-blue.info/c95d62c68196b2d0c1c1de8c7eeb6d50.html#neoterm)
+  call vimfiler#custom#profile('default', 'context', {
+    \ 'safe' : 0,
+    \ 'auto_expand' : 1,
+    \ 'parent' : 0
+  \ })
   let g:vimfiler_as_default_explorer = 1
+
+  "key mapping
   " 別ウィンドウで開く
-  nnoremap <space>fe :VimFilerExplore -split -winwidth=30 -find -no-quit<Cr>
+  nnoremap <space>fe :VimFilerExplore -split -winwidth=35 -find -toggle -no-quit<Cr>
   " 現在のファイルのディレクトリで開く
-  nnoremap <space>ff :VimFilerBufferDir<Cr>
+  nnoremap <space>ff :VimFilerBufferDir -quit<Cr>
   " プロジェクトホームで開く
   nnoremap <space>fg :VimFiler -project<Cr>
-
   " Two columns of indentation.
   let g:vimfiler_tree_indentation = 2
+
+  autocmd FileType vimfiler call s:vimfiler_my_settings()
+  function! s:vimfiler_my_settings()
+    nnoremap <silent><buffer><expr> s vimfiler#do_switch_action('split')
+    nnoremap <silent><buffer><expr> v vimfiler#do_switch_action('vsplit')
+    nnoremap <silent><buffer><expr> t vimfiler#do_action('tabopen')
+  endfunction
+
+  " Textmate icons
+  let g:vimfiler_tree_leaf_icon = ' '
+  let g:vimfiler_tree_opened_icon = '▾'
+  let g:vimfiler_tree_closed_icon = '▸'
+  let g:vimfiler_file_icon = '-'
+  let g:vimfiler_marked_file_icon = '*'
 '''
 # ファイルをtree表示してくれる
 # [[plugins]]
@@ -78,9 +98,6 @@ hook_add = '''
 # ログファイルを色づけしてくれる
 [[plugins]]
 repo = 'vim-scripts/AnsiEsc.vim'
-# 行末の半角スペースを可視化(うまく動かない？)
-# [[plugins]]
-# repo = 'bronson/vim-trailing-whitespace'
 
 # Markdown用
 # 参考:http://www.key-p.com/blog/staff/archives/9032
@@ -133,7 +150,7 @@ repo = 'vim-airline/vim-airline'
 [[plugins]]
 repo = 'vim-airline/vim-airline-themes'
 hook_add = '''
-  let g:airline_theme='term'
+  let g:airline_theme='hybrid'
 '''
 
 

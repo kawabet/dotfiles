@@ -27,10 +27,10 @@ endif
 " highlight Normal guibg=Black guifg=White
 
 
-augroup myStatusLine
-  autocmd! ColorScheme * highlight StatusLine guibg=White guifg=Black
-  autocmd! ColorScheme * highlight StatusLineNC guibg=Gray guifg=Black
-augroup END
+" augroup myStatusLine
+"   autocmd! ColorScheme * highlight StatusLine guibg=White guifg=Black
+"   autocmd! ColorScheme * highlight StatusLineNC guibg=Gray guifg=Black
+" augroup END
 
 
 " [Vim のカラースキームが微妙に気に食わないときの対処法 \- 反省はしても後悔はしない](http://cohama.hateblo.jp/entry/2013/08/11/020849)
