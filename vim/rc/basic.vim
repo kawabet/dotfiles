@@ -38,6 +38,8 @@ set ignorecase
 set smartcase
 " 検索結果をハイライト表示する
 set hlsearch
+" ESCキー2度押しでハイライトの切り替え
+nnoremap <silent><Esc><Esc> :<C-u>set nohlsearch!<CR>
 " 暗い背景色に合わせた配色にする
 set background=dark
 " タブ入力を複数の空白入力に置き換える
@@ -54,8 +56,12 @@ set listchars=tab:>\ ,extends:<
 set backspace=indent,eol,start
 " 行番号を表示する
 set number
+" カーソルラインをハイライトする
+set cursorline
 " 対応する括弧やブレースを表示する
 set showmatch
+" Vimの「%」を拡張する
+source $VIMRUNTIME/macros/matchit.vim
 " 改行時に前の行のインデントを継続する
 set autoindent
 " 改行時に入力された行の末尾に合わせて次の行のインデントを増減する

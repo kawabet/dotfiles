@@ -162,3 +162,9 @@ hook_add = '''
 #   let g:dwm_map_keys=0
 # """
 
+# [Vim\-EasyMotionでカーソル移動を爆速にして生産性をもっと向上させる \- haya14busa](http://haya14busa.com/mastering-vim-easymotion/)
+[[plugins]]
+repo = 'easymotion/vim-easymotion'
+hook_add = '''
+  nmap <space><space> <Plug>(easymotion-s2)
+'''

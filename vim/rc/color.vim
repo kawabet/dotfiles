@@ -9,13 +9,14 @@ syntax enable
 " colorscheme iceberg
 " colorscheme hybrid_material
 " colorscheme Tomorrow-Night-Eighties
+" colorscheme luna-term
+colorscheme desertEx
+
+" コメントを濃い緑にする
+highlight Comment ctermfg=darkgreen guifg=darkgreen
 
 if has('gui_running')
-  colorscheme luna
-else
-  colorscheme luna-term
-  " コメントを濃い緑にする
-  highlight Comment ctermfg=darkgreen guifg=darkgreen
+  " colorscheme luna
 endif
 
 

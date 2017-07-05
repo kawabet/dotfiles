@@ -41,7 +41,6 @@ cask vlc
 cask xquartz
 
 tap caskroom/versions
-cask java7
 
 tap d12frosted/emacs-plus
 brew emacs-plus
@@ -108,6 +107,7 @@ brew libusb --universal
 brew libusb-compat --universal
 brew libuv
 brew libvterm
+brew libxml2
 brew libyaml
 brew little-cms2 --universal
 brew macvim
@@ -118,6 +118,7 @@ brew memcached
 brew mongodb
 brew msgpack
 brew mysql
+brew neovim
 brew net-snmp
 brew nettle
 brew nkf
@@ -148,9 +149,11 @@ brew sl
 brew sqlite
 brew subversion
 brew the_silver_searcher
+brew tig
 brew tmux
 brew tree
 brew unibilium
+brew unixodbc
 brew unrar
 brew vim --with-lua
 brew webp --universal
@@ -160,10 +163,17 @@ brew winetricks
 brew xz --universal
 brew zsh
 
+tap homebrew/dupes
+
+tap homebrew/php
+brew composer
+brew php56
+
+tap homebrew/versions
+
 tap homebrew/versions
 
 tap neovim/neovim
-brew neovim
 
 tap rcmdnk/file
 brew brew-file
@@ -171,8 +181,12 @@ brew brew-file
 tap universal-ctags/universal-ctags
 
 # Other Homebrew packages
+brew PHP56
 brew pt
 brew rsense
+
+# Cask applications
+cask java7
 
 # App Store applications
 appstore 836505650 Battery Monitor (2.4)

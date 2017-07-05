@@ -145,6 +145,11 @@ on_i = 1
 repo = 'KohPoll/vim-less'
 on_i = 1
 
+# 色を確認
+[[plugins]]
+repo = 'gorodinskiy/vim-coloresque'
+on_ft = 'css'
+
 # TypeScript
 [[plugins]]
 repo='leafgarland/typescript-vim'
