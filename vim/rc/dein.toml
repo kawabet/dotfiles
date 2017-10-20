@@ -50,7 +50,14 @@ repo = 'cespare/vim-toml'
 repo = 'tpope/vim-fugitive'
 
 # シングルクオートとダブルクオートの入れ替え等
-# cs"'みたいな
+# [surround\.vimの使い方 \| Memo on the Web](http://motw.mods.jp/Vim/surround.html)
+# ds'	文を囲んでいる ' を消す
+# di'	' で囲まれた部分を消す
+# cs'"	' を " に変更
+# ci'	' で囲まれた部分を消して, インサートモードに入る
+# S'	ビジュアルモードで選択した部分を ' で囲む
+# yss'	文を ' で囲む
+# ysiw'	カーソルがある単語を ' で囲む
 [[plugins]]
 repo = 'tpope/vim-surround'
 

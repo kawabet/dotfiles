@@ -26,6 +26,7 @@ repo = 'kassio/neoterm'
 if = "has('nvim')"
 on_i = 1
 hook_source = '''
+  let g:neoterm_size = 15
   let g:neoterm_position = 'horizontal'
   let g:neoterm_automap_keys = ',tt'
 

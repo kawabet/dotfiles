@@ -10,6 +10,7 @@ cask betterzipql
 cask bootchamp
 cask caffeine
 cask clipy
+cask coteditor
 cask dash
 cask diskwave
 cask dropbox
@@ -187,6 +188,7 @@ brew rsense
 
 # Cask applications
 cask java7
+cask kobito
 
 # App Store applications
 appstore 836505650 Battery Monitor (2.4)

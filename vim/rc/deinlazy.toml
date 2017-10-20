@@ -190,14 +190,22 @@ repo = 'galooshi/vim-import-js'
 on_ft = 'javascript'
 on_i = 1
 
-# JavaScriptコード補完
-repo = 'marijnh/tern_for_vim'
-on_ft = 'javascript'
-build = 'npm install'
+# vue.jsのシンタックスハイライト
+[[plugins]]
+repo = 'posva/vim-vue'
+on_ft = ['vue']
 
 # Gist
+[[plugins]]
 repo = 'lambdalisue/vim-gista'
 on_cmd = 'Gista'
 hook_add = '''
   let g:gista#github_user = 'kawabet'
 '''
+
+# JavaScriptコード補完
+[[plugins]]
+repo = 'marijnh/tern_for_vim'
+on_ft = 'javascript'
+build = 'npm install'
+
