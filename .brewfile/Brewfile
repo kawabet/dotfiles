@@ -2,44 +2,46 @@
 # tap repositories and their packages
 
 tap caskroom/cask
-cask alfred
-cask appcleaner
-cask atom
-cask bettertouchtool
-cask betterzipql
-cask bootchamp
-cask caffeine
-cask clipy
-cask coteditor
-cask dash
-cask diskwave
-cask dropbox
-cask eclipse-java
-cask evernote
-cask firealpaca
-cask firefox
-cask google-chrome
-cask google-japanese-ime
-cask hyperswitch
-cask iterm2
-cask java
-cask karabiner
-cask libreoffice
-cask p4merge
-cask pingendo
-cask qlcolorcode
-cask qlmarkdown
-cask qlstephen
-cask quicklook-csv
-cask quicklook-json
-cask sequel-pro
 cask sketch
-cask sourcetree
-cask sqlitebrowser
-cask vagrant
+cask diskwave
+cask atom
+cask qlmarkdown
 cask virtualbox
+cask eclipse-java
 cask vlc
+cask appcleaner
+cask bootchamp
+cask pingendo
+cask firealpaca
+cask evernote
+cask iterm2
+cask dropbox
+cask betterzipql
+cask coteditor
+cask p4merge
+cask dash
+cask vagrant
+cask libreoffice
+cask clipy
+cask caffeine
+cask quicklook-json
+cask qlstephen
+cask karabiner
+cask sequel-pro
+cask qlcolorcode
+cask firefox
+cask hyperswitch
+cask google-chrome
 cask xquartz
+cask google-japanese-ime
+cask quicklook-csv
+cask java
+cask sourcetree
+cask alfred
+cask bettertouchtool
+
+tap caskroom/fonts
+cask font-ricty-diminished
 
 tap caskroom/versions
 
@@ -189,6 +191,7 @@ brew rsense
 # Cask applications
 cask java7
 cask kobito
+cask sqlitebrowser
 
 # App Store applications
 appstore 836505650 Battery Monitor (2.4)

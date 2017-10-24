@@ -19,7 +19,17 @@ bind '"\C-f": forward-word'
 bind '"\C-b": backward-word'
 
 # alias
-alias ll='ls -al'
+if [ "$(uname)" = 'Darwin' ]; then
+    export LSCOLORS=xbfxcxdxbxegedabagacad
+    alias ls='ls -G'
+    alias ll='ls -lG'
+    alias la='ls -alG'
+else
+    # eval `dircolors ~/.colorrc`
+    alias ls='ls --color=auto'
+    alias ll='ls -l --color=auto'
+    alias la='ls -al --color=auto'
+fi
 
 
 # [Mac で bash でも peco\-history を使いたい \- Qiita](http://qiita.com/yungsang/items/09890a06d204bf398eea)
