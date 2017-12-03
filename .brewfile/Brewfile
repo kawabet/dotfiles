@@ -10,6 +10,7 @@ cask virtualbox
 cask eclipse-java
 cask vlc
 cask appcleaner
+cask karabiner-elements
 cask bootchamp
 cask pingendo
 cask firealpaca
@@ -26,7 +27,6 @@ cask clipy
 cask caffeine
 cask quicklook-json
 cask qlstephen
-cask karabiner
 cask sequel-pro
 cask qlcolorcode
 cask firefox
