@@ -18,10 +18,10 @@ nmap 9 $
 " inoremap  <C-e> <END>
 " inoremap  <C-a> <HOME>
 " インサートモードでもhjklで移動（Ctrl押すけどね）
-inoremap <C-j> <Down>
-inoremap <C-k> <Up>
-inoremap <C-h> <Left>
-inoremap <C-l> <Right>
+" inoremap <C-j> <Down>
+" inoremap <C-k> <Up>
+" inoremap <C-h> <Left>
+" inoremap <C-l> <Right>
 
 " ウィンドウ操作
 "[Vimの便利な画面分割＆タブページと、それを更に便利にする方法 \- Qiita](http://qiita.com/tekkoc/items/98adcadfa4bdc8b5a6ca)

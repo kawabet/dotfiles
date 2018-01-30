@@ -8,12 +8,21 @@ syntax enable
 " colorscheme elflord
 " colorscheme iceberg
 " colorscheme hybrid_material
+" colorscheme hybrid_reverse
 " colorscheme Tomorrow-Night-Eighties
 " colorscheme luna-term
 colorscheme desertEx
+" colorscheme base
 
 " コメントを濃い緑にする
-highlight Comment ctermfg=darkgreen guifg=darkgreen
+" highlight Comment ctermfg=114 guifg=palegreen3
+
+" タブ文字の色を変更
+augroup set-tab-highlight
+  autocmd!
+  autocmd VimEnter,Colorscheme * highlight SpecialKey cterm=NONE ctermfg=244 ctermbg=NONE
+  autocmd VimEnter,Colorscheme * highlight Whitespace cterm=NONE ctermfg=244 ctermbg=NONE
+augroup END
 
 if has('gui_running')
   " colorscheme luna
@@ -26,7 +35,6 @@ endif
 
 " 背景色を黒にする
 " highlight Normal guibg=Black guifg=White
-
 
 " augroup myStatusLine
 "   autocmd! ColorScheme * highlight StatusLine guibg=White guifg=Black

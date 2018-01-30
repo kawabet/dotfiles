@@ -17,7 +17,7 @@ nmap yk y^
 " カーソルから行頭まで削除(インサートモード)
 " inoremap <silent> <C-k> <Esc>lc^
 " カーソルから行末まで削除(インサートモード)
-inoremap <silent> <C-k> <Esc>lc$
+" inoremap <silent> <C-k> <Esc>lc$
 " カーソルから行頭までヤンク(インサートモード)
 " inoremap <silent> <C-y>0 <Esc>ly0<Insert>
 " カーソルから行末までヤンク(インサートモード)
@@ -78,8 +78,9 @@ endif
 """"""""""""""""""""""""""""""
 " 自動的に閉じ括弧を入力
 """"""""""""""""""""""""""""""
-imap { {}<LEFT>
-imap [ []<LEFT>
-imap ( ()<LEFT>
+" cohama/lexima.vim に変更
+" imap { {}<LEFT>
+" imap [ []<LEFT>
+" imap ( ()<LEFT>
 """"""""""""""""""""""""""""""
 

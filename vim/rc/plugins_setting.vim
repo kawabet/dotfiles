@@ -122,6 +122,14 @@ autocmd QuickFixCmdPost *grep* cwindow
 " ステータス行に現在のgitブランチを表示する
 set statusline+=%{fugitive#statusline()}
 
+""""""""""""""""""""""""""""""
+" vim-gitgutter
+""""""""""""""""""""""""""""""
+" vim-gitgutterのハイライトを切り替え
+nnoremap <silent> [fugitive]t :<C-u>GitGutterLineHighlightsToggle<Enter>
+nmap <C-n> <Plug>GitGutterNextHunk
+nmap <C-m> <Plug>GitGutterPrevHunk
+
 
 """"""""""""""""""""""""""""""
 " vim-go
@@ -137,6 +145,7 @@ let g:go_highlight_build_constraints = 1
 
 let g:go_fmt_command = "goimports"
 let g:go_fmt_autosave = 1
+let g:go_auto_type_info = 1
 
 " Shortcut
 " 実行
@@ -148,23 +157,39 @@ au FileType go nmap <leader>t <Plug>(go-test)
 " カバレッジ
 au FileType go nmap <leader>c <Plug>(go-coverage)
 
+" そのままgodef C-]と同じ
+au FileType go nmap <leader>def <Plug>(go-def)
 " ウィンドウを横に分割してgodef
-au FileType go nmap <leader>ds <Plug>(go-def-split)
+au FileType go nmap <leader>defs <Plug>(go-def-split)
 " ウィンドウを縦に分割してgodef
-au FileType go nmap <leader>dv <Plug>(go-def-vertical)
+au FileType go nmap <leader>defv <Plug>(go-def-vertical)
 " 新規タブでgodef
-au FileType go nmap <leader>dt <Plug>(go-def-tab)
+au FileType go nmap <leader>deft <Plug>(go-def-tab)
+
 " godocを開く
-au FileType go nmap <leader>gd <Plug>(go-doc)
+au FileType go nmap <leader>doc <Plug>(go-doc)
+" ウィンドウを横に分割してgodoc
+au FileType go nmap <leader>docs <Plug>(go-doc-split)
 " ウィンドウを縦に分割してgodoc
-au FileType go nmap <leader>gv <Plug>(go-doc-vertical)
+au FileType go nmap <leader>docv <Plug>(go-doc-vertical)
 " ブラウザでgodocを開く
-au FileType go nmap <leader>gb <Plug>(go-doc-browser)
+au FileType go nmap <leader>docb <Plug>(go-doc-browser)
 
 " interfaceの実装のリストを開く
-au FileType go nmap <leader>s <Plug>(go-implements)
+au FileType go nmap <leader>imp <Plug>(go-implements)
 " 型情報を表示
 au FileType go nmap <leader>i <Plug>(go-info)
 " カーソル下をリネーム
-au FileType go nmap <leader>e <Plug>(go-rename)
+au FileType go nmap <leader>rename <Plug>(go-rename)
 
+" testファイルにジャンプ
+au FileType go nmap <leader>a <Plug>(go-alternate-edit)
+" testファイルを開く（ウィンドウ横分割）
+au FileType go nmap <leader>as <Plug>(go-alternate-split)
+" testファイルを開く（ウィンドウ縦分割）
+au FileType go nmap <leader>av <Plug>(go-alternate-vertical)
+
+" 関数リストを開く(現在のファイル)
+au FileType go nmap <leader>ls :<C-u>GoDecls<Enter>
+" 関数リストを開く(現在のディレクトリ)
+au FileType go nmap <leader>lsd :<C-u>GoDeclsDir<Enter>

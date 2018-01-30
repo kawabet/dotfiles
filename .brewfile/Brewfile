@@ -1,57 +1,6 @@
 
 # tap repositories and their packages
 
-tap caskroom/cask
-cask sketch
-cask diskwave
-cask atom
-cask qlmarkdown
-cask virtualbox
-cask eclipse-java
-cask vlc
-cask appcleaner
-cask karabiner-elements
-cask bootchamp
-cask pingendo
-cask firealpaca
-cask evernote
-cask iterm2
-cask dropbox
-cask betterzipql
-cask coteditor
-cask p4merge
-cask dash
-cask vagrant
-cask libreoffice
-cask clipy
-cask caffeine
-cask quicklook-json
-cask qlstephen
-cask sequel-pro
-cask qlcolorcode
-cask firefox
-cask hyperswitch
-cask google-chrome
-cask xquartz
-cask google-japanese-ime
-cask quicklook-csv
-cask java
-cask sourcetree
-cask alfred
-cask bettertouchtool
-
-tap caskroom/fonts
-cask font-ricty-diminished
-
-tap caskroom/versions
-
-tap d12frosted/emacs-plus
-brew emacs-plus
-
-tap homebrew/boneyard
-
-tap homebrew/brewdler
-
 tap homebrew/core
 brew app-engine-go-64
 brew apr
@@ -166,6 +115,10 @@ brew winetricks
 brew xz --universal
 brew zsh
 
+tap homebrew/boneyard
+
+tap homebrew/brewdler
+
 tap homebrew/dupes
 
 tap homebrew/php
@@ -176,10 +129,59 @@ tap homebrew/versions
 
 tap homebrew/versions
 
+tap caskroom/cask
+cask sketch
+cask diskwave
+cask atom
+cask qlmarkdown
+cask virtualbox
+cask eclipse-java
+cask vlc
+cask appcleaner
+cask karabiner-elements
+cask bootchamp
+cask pingendo
+cask firealpaca
+cask evernote
+cask iterm2
+cask dropbox
+cask oni
+cask coteditor
+cask p4merge
+cask dash
+cask vagrant
+cask libreoffice
+cask clipy
+cask caffeine
+cask quicklook-json
+cask qlstephen
+cask sequel-pro
+cask qlcolorcode
+cask firefox
+cask hyperswitch
+cask google-chrome
+cask xquartz
+cask google-japanese-ime
+cask quicklook-csv
+cask java
+cask sourcetree
+cask alfred
+cask bettertouchtool
+
+tap caskroom/fonts
+cask font-ricty-diminished
+
+tap caskroom/versions
+
+tap d12frosted/emacs-plus
+brew emacs-plus
+
 tap neovim/neovim
 
 tap rcmdnk/file
 brew brew-file
+
+tap rogual/neovim-dot-app
 
 tap universal-ctags/universal-ctags
 
@@ -189,6 +191,7 @@ brew pt
 brew rsense
 
 # Cask applications
+cask betterzipql
 cask java7
 cask kobito
 cask sqlitebrowser
@@ -201,6 +204,9 @@ appstore 432948323 DesktopMonitor (1.3)
 appstore 736008948 EpocCam Viewer (1.1)
 appstore 408980954 GarageBand (6.0.5)
 appstore 456877552 GeekTool (3.0.3)
+appstore 408981434 iMovie (10.1.4)
+appstore 408981434 iMovie 9.0.9 (9.0.9)
+appstore 408981381 iPhoto (9.6.1)
 appstore 594391345 MarkdownLife (1.5.1)
 appstore 545005348 MyFiles (1.12)
 appstore 907364780 Pomodoro One (1.0.6)
@@ -208,7 +214,4 @@ appstore 803453959 Slack (2.3.4)
 appstore 405580712 StuffIt Expander (15.0.7)
 appstore 425424353 The Unarchiver (3.11.1)
 appstore 497799835 Xcode (8.2)
-appstore 408981434 iMovie (10.1.4)
-appstore 408981434 iMovie 9.0.9 (9.0.9)
-appstore 408981381 iPhoto (9.6.1)
 appstore 572547904 紀伊國屋書店Kinoppy (3.0.0)

@@ -30,6 +30,10 @@ hook_add = 'nmap [Space]s  <Plug>(vimshell_switch)'
 [[plugins]]
 repo = 'Shougo/context_filetype.vim'
 
+[[plugins]]
+repo = 'cohama/lexima.vim'
+on_i = 1
+
 # 言語
 [[plugins]]
 repo = 'davidhalter/jedi-vim'
@@ -50,6 +54,12 @@ hook_source = '''
   let g:go_highlight_functions = 1
   let g:go_highlight_methods = 1
   let g:go_highlight_structs = 1
+
+  " [hnakamur/vim\-go\-tutorial\-ja: Tutorial for vim\-go](https://github.com/hnakamur/vim-go-tutorial-ja)
+  " map <C-n> :cnext<CR>
+  " map <C-m> :cprevious<CR>
+  nnoremap <leader>a :cclose<CR>
+
   autocmd FileType go :highlight goErr cterm=bold ctermfg=214
   autocmd FileType go :match goErr /\<err\>/
 '''
@@ -73,17 +83,9 @@ on_event = 'InsertCharPre'
 on_ft = 'snippet'
 hook_add = '''
   " Plugin key-mappings.
-  imap <C-s>     <Plug>(neosnippet_expand_or_jump)
-  smap <C-s>     <Plug>(neosnippet_expand_or_jump)
-  xmap <C-s>     <Plug>(neosnippet_expand_target)
-
-  " SuperTab like snippets behavior.
-  imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-  \ "\<Plug>(neosnippet_expand_or_jump)"
-  \: pumvisible() ? "\<C-n>" : "\<TAB>"
-  smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-  \ "\<Plug>(neosnippet_expand_or_jump)"
-  \: "\<TAB>"
+  imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+  smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+  xmap <C-k>     <Plug>(neosnippet_expand_target)
 
   " For snippet_complete marker.
   if has('conceal')
@@ -91,6 +93,7 @@ hook_add = '''
   endif
 
   let g:neosnippet#snippets_directory = '~/.vim/snippets'
+	set completeopt-=preview
 '''
 [[plugins]]
 repo = 'Shougo/neosnippet-snippets'
@@ -165,7 +168,7 @@ hook_add='''
 '''
 
 [[plugins]]
-repo = 'evanmiller/nginx-vim-syntax'
+repo = 'chr4/nginx.vim'
 on_ft = 'nginx'
 
 # quickfixのエラー箇所を表示

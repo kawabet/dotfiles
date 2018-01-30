@@ -15,7 +15,7 @@ hook_add= '''
 
   "key mapping
   " 別ウィンドウで開く
-  nnoremap <space>fe :VimFilerExplore -split -winwidth=35 -find -toggle -no-quit<Cr>
+  nnoremap <space>fe :VimFilerExplore -split -status -winwidth=35 -find -toggle -no-quit<Cr>
   " 現在のファイルのディレクトリで開く
   nnoremap <space>ff :VimFilerBufferDir -quit<Cr>
   " プロジェクトホームで開く
@@ -48,6 +48,14 @@ repo = 'cespare/vim-toml'
 # Gitを便利に使う
 [[plugins]]
 repo = 'tpope/vim-fugitive'
+
+# Gitの差分を表示
+# [Vimメモ : vim\-gitgutterで差分を左端に表示する \- もた日記](http://wonderwall.hatenablog.com/entry/2016/03/26/211710)
+[[plugins]]
+repo = 'airblade/vim-gitgutter'
+hook_add = '''
+  " let g:gitgutter_highlight_lines = 1
+'''
 
 # シングルクオートとダブルクオートの入れ替え等
 # [surround\.vimの使い方 \| Memo on the Web](http://motw.mods.jp/Vim/surround.html)
@@ -175,3 +183,6 @@ repo = 'easymotion/vim-easymotion'
 hook_add = '''
   nmap <space><space> <Plug>(easymotion-s2)
 '''
+
+[[plugins]]
+repo = "ctrlpvim/ctrlp.vim"

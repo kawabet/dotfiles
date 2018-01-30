@@ -10,6 +10,9 @@ ln -sf ~/dotfiles/vim/vimrc ~/.config/nvim/init.vim
 # bash
 ln -sf ~/dotfiles/.bash_profile ~/.bash_profile
 ln -sf ~/dotfiles/.bashrc ~/.bashrc
+# zsh
+ln -sf ~/dotfiles/.zprofile ~/.zprofile
+ln -sf ~/dotfiles/.zshrc ~/.zshrc
 # mac
 # ln -sf ~/dotfiles/Brewfile ~/Brewfile
 ln -sf ~/dotfiles/.ctags ~/.ctags

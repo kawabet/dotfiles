@@ -24,7 +24,7 @@ export PATH=$HOME/.nodebrew/current/bin:$PATH
 
 ### GOPATH
 export GOPATH=$HOME/dev
-export GOROOT=/usr/local/Cellar/go/1.8/libexec
+export GOROOT=/usr/local/Cellar/go/1.9.2/libexec
 export PATH=$GOPATH/bin:$PATH
 
 ### Python version management: pyenv.
