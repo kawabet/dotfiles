@@ -1,9 +1,51 @@
-# .zprofile
+#
+# Executes commands at login pre-zshrc.
+#
+# Authors:
+#   Sorin Ionescu <sorin.ionescu@gmail.com>
+#
 
-# Get the aliases and functions
-if [ -f ~/.zshrc ]; then
-	. ~/.zshrc
+#
+# Browser
+#
+
+if [[ "$OSTYPE" == darwin* ]]; then
+  export BROWSER='open'
 fi
+
+#
+# Editors
+#
+
+export EDITOR='nano'
+export VISUAL='nano'
+export PAGER='less'
+
+#
+# Language
+#
+
+if [[ -z "$LANG" ]]; then
+  export LANG='en_US.UTF-8'
+fi
+
+#
+# Paths
+#
+
+# Ensure path arrays do not contain duplicates.
+typeset -gU cdpath fpath mailpath path
+
+# Set the list of directories that cd searches.
+# cdpath=(
+#   $cdpath
+# )
+
+# Set the list of directories that Zsh searches for programs.
+path=(
+  /usr/local/{bin,sbin}
+  $path
+)
 
 # User specific environment and startup programs
 
@@ -55,100 +97,17 @@ if [ -f ~/workspace/google-cloud-sdk/completion.zsh.inc ]; then
   source ~/workspace/google-cloud-sdk/completion.zsh.inc
 fi
 
-# [zshを使ってみる \- Qiita](https://qiita.com/ryutoyasugi/items/cb895814d4149ca44f12)
-# ヒストリの設定
-HISTFILE=~/.zsh_history
-# メモリに保存される履歴の件数
-HISTSIZE=10000
-# 履歴ファイルに保存される履歴の件数
-SAVEHIST=10000
-# 直前のコマンドの重複を削除
-setopt hist_ignore_dups
-# 同じコマンドをヒストリに残さない
-setopt hist_ignore_all_dups
-# 古いコマンドと同じものは無視
-setopt hist_save_no_dups
-# 同時に起動したzshの間でヒストリを共有
-setopt share_history
-# 開始と終了を記録
-setopt EXTENDED_HISTORY
-# スペースで始まるコマンド行はヒストリリストから削除
-# setopt hist_ignore_space
-# ヒストリを呼び出してから実行する間に一旦編集可能
-# setopt hist_verify
-# 余分な空白は詰めて記録
-# setopt hist_reduce_blanks
-# historyコマンドは履歴に登録しない
-# setopt hist_no_store
-# 補完時にヒストリを自動的に展開
-# setopt hist_expand
+#
+# Less
+#
 
-# 履歴をインクリメンタルに追加
-setopt inc_append_history
-# インクリメンタルからの検索
-bindkey "^R" history-incremental-search-backward
-bindkey "^S" history-incremental-search-forward
+# Set the default Less options.
+# Mouse-wheel scrolling has been disabled by -X (disable screen clearing).
+# Remove -X and -F (exit if the content fits on one screen) to enable it.
+export LESS='-F -g -i -M -R -S -w -X -z-4'
 
-# 補完機能を有効にする
-autoload -Uz compinit
-compinit -u
-if [ -e /usr/local/share/zsh-completions ]; then
-  fpath=(/usr/local/share/zsh-completions $fpath)
+# Set the Less input preprocessor.
+# Try both `lesspipe` and `lesspipe.sh` as either might exist on a system.
+if (( $#commands[(i)lesspipe(|.sh)] )); then
+  export LESSOPEN="| /usr/bin/env $commands[(i)lesspipe(|.sh)] %s 2>&-"
 fi
-# 補完で小文字でも大文字にマッチさせる
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
-# 補完候補を詰めて表示
-setopt list_packed
-# 補完候補一覧をカラー表示
-zstyle ':completion:*' list-colors ''
-
-# コマンドのスペルを訂正
-setopt correct
-# ビープ音を鳴らさない
-setopt no_beep
-
-# prompt
-# autoload -Uz vcs_info
-# setopt prompt_subst
-# zstyle ':vcs_info:git:*' check-for-changes true
-# zstyle ':vcs_info:git:*' stagedstr "%F{magenta}!"
-# zstyle ':vcs_info:git:*' unstagedstr "%F{yellow}+"
-# zstyle ':vcs_info:*' formats "%F{cyan}%c%u[%b]%f"
-# zstyle ':vcs_info:*' actionformats '[%b|%a]'
-# precmd() { vcs_info }
-# PROMPT='%m:%F{green}%~%f %n %F{yellow}$%f '
-# RPROMPT='${vcs_info_msg_0_}'
-
-
-# [Terminal: zshプロンプトのカスタマイズ（git対応） \| siro:chro](http://www.sirochro.com/note/terminal-zsh-prompt-customize/)
-# VCSの情報を取得するzsh関数
-autoload -Uz vcs_info
-autoload -Uz colors # black red green yellow blue magenta cyan white
-colors
-
-# PROMPT変数内で変数参照
-setopt prompt_subst
-
-zstyle ':vcs_info:git:*' check-for-changes true #formats 設定項目で %c,%u が使用可
-zstyle ':vcs_info:git:*' stagedstr "%F{green}!" #commit されていないファイルがある
-zstyle ':vcs_info:git:*' unstagedstr "%F{magenta}+" #add されていないファイルがある
-zstyle ':vcs_info:*' formats "%F{cyan}%c%u(%b)%f" #通常
-zstyle ':vcs_info:*' actionformats '[%b|%a]' #rebase 途中,merge コンフリクト等 formats 外の表示
-
-# %b ブランチ情報
-# %a アクション名(mergeなど)
-# %c changes
-# %u uncommit
-
-# プロンプト表示直前に vcs_info 呼び出し
-precmd () { vcs_info }
-
-# プロンプト（左）
-PROMPT='%{$fg[red]%}[%n@%m]%{$reset_color%}'
-PROMPT=$PROMPT'${vcs_info_msg_0_} %{${fg[red]}%}%}$%{${reset_color}%} '
-
-# プロンプト（右）
-RPROMPT='%{${fg[red]}%}[%~]%{${reset_color}%}'
-
-
-

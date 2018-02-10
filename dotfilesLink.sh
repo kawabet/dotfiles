@@ -11,8 +11,13 @@ ln -sf ~/dotfiles/vim/vimrc ~/.config/nvim/init.vim
 ln -sf ~/dotfiles/.bash_profile ~/.bash_profile
 ln -sf ~/dotfiles/.bashrc ~/.bashrc
 # zsh
+ln -sf ~/dotfiles/.zlogin ~/.zlogin
+ln -sf ~/dotfiles/.zlogout ~/.zlogout
+ln -sf ~/dotfiles/.zpreztorc ~/.zpreztorc
 ln -sf ~/dotfiles/.zprofile ~/.zprofile
+ln -sf ~/dotfiles/.zshenv ~/.zshenv
 ln -sf ~/dotfiles/.zshrc ~/.zshrc
+ln -sf ~/dotfiles/prezto ~/.zprezto
 # mac
 # ln -sf ~/dotfiles/Brewfile ~/Brewfile
 ln -sf ~/dotfiles/.ctags ~/.ctags
