@@ -2,7 +2,6 @@
 # tap repositories and their packages
 
 tap homebrew/core
-brew app-engine-go-64
 brew apr
 brew apr-util
 brew autoconf
@@ -183,10 +182,14 @@ brew brew-file
 
 tap rogual/neovim-dot-app
 
+tap sanemat/font
+brew ricty
+
 tap universal-ctags/universal-ctags
 
 # Other Homebrew packages
 brew PHP56
+brew app-engine-go-64
 brew pt
 brew rsense
 
