@@ -89,14 +89,20 @@ nnoremap <silent> [unite]c :<C-u>Unite webcolorname<CR>
 " スニペットを表示
 nnoremap <silent> [unite]q :<C-u>Unite neosnippet<CR>
 
-" unite grep に ag(The Silver Searcher) を使う
-if executable('ag')
-  let g:unite_source_grep_command = 'ag'
-  let g:unite_source_grep_default_opts =
-        \ '-i --vimgrep --hidden --ignore ' .
-        \  '''.hg'' --ignore ''.svn'' --ignore ''.git'' --ignore ''.bzr'''
+" [monochromegane/the\_platinum\_searcher: A code search tool similar to ack and the\_silver\_searcher\(ag\)\. It supports multi platforms and multi encodings\.](https://github.com/monochromegane/the_platinum_searcher)
+if executable('pt')
+  let g:unite_source_grep_command = 'pt'
+  let g:unite_source_grep_default_opts = '--nogroup --nocolor'
   let g:unite_source_grep_recursive_opt = ''
+  let g:unite_source_grep_encoding = 'utf-8'
 endif
+" if executable('ag')
+"   let g:unite_source_grep_command = 'ag'
+"   let g:unite_source_grep_default_opts =
+"         \ '-i --vimgrep --hidden --ignore ' .
+"         \  '''.hg'' --ignore ''.svn'' --ignore ''.git'' --ignore ''.bzr'''
+"   let g:unite_source_grep_recursive_opt = ''
+" endif
 
 
 " .mdファイルにMarkdownのハイライトを適用
@@ -135,6 +141,7 @@ nmap <C-m> <Plug>GitGutterPrevHunk
 " vim-go
 """"""""""""""""""""""""""""""
 " [fatih/vim\-go: Go development plugin for Vim](https://github.com/fatih/vim-go)
+" [hnakamur/vim\-go\-tutorial\-ja: Tutorial for vim\-go](https://github.com/hnakamur/vim-go-tutorial-ja)
 " Settings
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
@@ -151,7 +158,17 @@ let g:go_auto_type_info = 1
 " 実行
 au FileType go nmap <leader>r <Plug>(go-run)
 " ビルド
-au FileType go nmap <leader>b <Plug>(go-build)
+" au FileType go nmap <leader>b <Plug>(go-build)
+" run :GoBuild or :GoTestCompile based on the go file
+function! s:build_go_files()
+  let l:file = expand('%')
+  if l:file =~# '^\f\+_test\.go$'
+    call go#test#Test(0, 1)
+  elseif l:file =~# '^\f\+\.go$'
+    call go#cmd#Build(0)
+  endif
+endfunction
+autocmd FileType go nmap <leader>b :<C-u>call <SID>build_go_files()<CR>
 " テスト実行
 au FileType go nmap <leader>t <Plug>(go-test)
 " カバレッジ
@@ -193,3 +210,9 @@ au FileType go nmap <leader>av <Plug>(go-alternate-vertical)
 au FileType go nmap <leader>ls :<C-u>GoDecls<Enter>
 " 関数リストを開く(現在のディレクトリ)
 au FileType go nmap <leader>lsd :<C-u>GoDeclsDir<Enter>
+
+" 次のエラーにジャンプ
+map <space>n :cnext<CR>
+" 前のエラーにジャンプ
+map <space>m :cprevious<CR>
+" nnoremap <leader>a :cclose<CR>

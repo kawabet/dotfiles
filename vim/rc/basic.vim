@@ -6,7 +6,7 @@
 let mapleader = ","
 " vim内部で使われる文字エンコーディングをutf-8に設定する
 set encoding=utf-8
-set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
+set fileencodings=utf-8,iso-2022-jp,euc-jp,sjis
 " 想定される改行コードの指定する
 set fileformats=unix,dos,mac
 " タグファイルの指定
@@ -53,7 +53,7 @@ set hidden
 set list
 " タブと行の続きを可視化する
 " set listchars=tab:>\ ,extends:<
-set lcs=tab:>\ ,trail:_,extends:\
+set lcs=tab:.\ ,trail:_,extends:\
 " バックスペースでなんでも消せるように
 set backspace=indent,eol,start
 " 行番号を表示する

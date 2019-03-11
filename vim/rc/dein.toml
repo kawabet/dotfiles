@@ -103,6 +103,11 @@ repo = 'yuku-t/vim-ref-ri'
 # メソッドの定義元へジャンプ
 [[plugins]]
 repo = 'szw/vim-tags'
+hook_add = '''
+  " 最初にtags作るときは ctags -R --extra=+f
+  " tagsジャンプの時に複数ある時は一覧表示
+  nnoremap <C-]> g<C-]>
+'''
 # クラスのアウトラインを表示
 [[plugins]]
 repo = 'majutsushi/tagbar'

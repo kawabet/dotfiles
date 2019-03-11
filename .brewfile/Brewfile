@@ -12,6 +12,7 @@ brew cabextract
 brew cairo
 brew cask
 brew cmake
+brew composer
 brew cscope
 brew ctags
 brew curl
@@ -34,7 +35,7 @@ brew go
 brew gobject-introspection
 brew gradle
 brew harfbuzz
-brew heroku
+brew htop
 brew hub
 brew icu4c
 brew imagemagick
@@ -54,6 +55,7 @@ brew libtasn1 --universal
 brew libtermkey
 brew libtiff --universal
 brew libtool --universal
+brew libunistring
 brew libusb --universal
 brew libusb-compat --universal
 brew libuv
@@ -69,6 +71,7 @@ brew memcached
 brew mongodb
 brew msgpack
 brew mysql
+brew ncurses
 brew neovim
 brew net-snmp
 brew nettle
@@ -77,17 +80,20 @@ brew nodebrew
 brew nsq
 brew oniguruma
 brew openssl
+brew p11-kit
 brew p7zip
 brew pango
 brew pcre
 brew peco
 brew perl
+brew pipenv
 brew pixman
 brew pkg-config
 brew postgresql
 brew pyenv
+brew pyenv-virtualenv
 brew python
-brew python3
+brew qemu
 brew rbenv
 brew readline
 brew reattach-to-user-namespace
@@ -121,59 +127,22 @@ tap homebrew/brewdler
 tap homebrew/dupes
 
 tap homebrew/php
-brew composer
-brew php56
 
 tap homebrew/versions
 
 tap homebrew/versions
 
 tap caskroom/cask
-cask sketch
-cask diskwave
-cask atom
-cask qlmarkdown
-cask virtualbox
-cask eclipse-java
-cask vlc
-cask appcleaner
-cask karabiner-elements
-cask bootchamp
-cask pingendo
-cask firealpaca
-cask evernote
-cask iterm2
-cask dropbox
-cask oni
-cask coteditor
-cask p4merge
-cask dash
-cask vagrant
-cask libreoffice
-cask clipy
-cask caffeine
-cask quicklook-json
-cask qlstephen
-cask sequel-pro
-cask qlcolorcode
-cask firefox
-cask hyperswitch
-cask google-chrome
-cask xquartz
-cask google-japanese-ime
-cask quicklook-csv
-cask java
-cask sourcetree
-cask alfred
-cask bettertouchtool
 
 tap caskroom/fonts
-cask font-ricty-diminished
 
 tap caskroom/versions
 
 tap d12frosted/emacs-plus
 brew emacs-plus
+
+tap moncho/dry
+brew dry
 
 tap neovim/neovim
 
@@ -190,12 +159,54 @@ tap universal-ctags/universal-ctags
 # Other Homebrew packages
 brew PHP56
 brew app-engine-go-64
+brew php56
 brew pt
+brew python3
 brew rsense
 
 # Cask applications
+cask sketch
+cask diskwave
+cask atom
+cask qlmarkdown
+cask virtualbox
+cask eclipse-java
+cask vlc
+cask appcleaner
+cask karabiner-elements
+cask bootchamp
+cask intellij-idea
+cask pingendo
+cask firealpaca
+cask evernote
+cask iterm2
+cask dropbox
+cask oni
+cask coteditor
+cask p4merge
+cask dash
+cask vagrant
+cask libreoffice
+cask clipy
+cask caffeine
+cask quicklook-json
+cask qlstephen
+cask sequel-pro
+cask goland
+cask qlcolorcode
+cask firefox
+cask hyperswitch
+cask google-chrome
+cask xquartz
+cask google-japanese-ime
+cask quicklook-csv
+cask java
+cask sourcetree
+cask alfred
+cask bettertouchtool
+cask pycharm
+cask font-ricty-diminished
 cask betterzipql
-cask java7
 cask kobito
 cask sqlitebrowser
 

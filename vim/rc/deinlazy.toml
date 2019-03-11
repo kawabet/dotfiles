@@ -60,8 +60,8 @@ hook_source = '''
   " map <C-m> :cprevious<CR>
   nnoremap <leader>a :cclose<CR>
 
-  autocmd FileType go :highlight goErr cterm=bold ctermfg=214
-  autocmd FileType go :match goErr /\<err\>/
+  " autocmd FileType go :highlight goErr cterm=bold ctermfg=214
+  " autocmd FileType go :match goErr /\<err\>/
 '''
 
  [[plugins]]
@@ -113,6 +113,10 @@ hook_add = '''
           \ 'html' : {
           \   'filters' : 'html',
           \ },
+          \ 'vue' : {
+          \   'extends' : 'html',
+          \   'filters' : 'html',
+          \ },
           \ 'css' : {
           \   'filters' : 'fc',
           \ },
@@ -125,6 +129,7 @@ hook_add = '''
     autocmd!
     autocmd FileType * let g:user_emmet_settings.indentation = '               '[:&tabstop]
   augroup END
+  autocmd BufNewFile,BufRead *.{html,htm,vue*} set filetype=html
 '''
 
 # Rails向けのコマンドを提供する
@@ -151,7 +156,7 @@ on_i = 1
 # 色を確認
 [[plugins]]
 repo = 'gorodinskiy/vim-coloresque'
-on_ft = 'css'
+on_ft = ['css', 'html', 'less', 'sass', 'scss', 'stylus', 'vim']
 
 # TypeScript
 [[plugins]]

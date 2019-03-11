@@ -67,13 +67,24 @@ export PATH=$HOME/.nodebrew/current/bin:$PATH
 
 ### GOPATH
 export GOPATH=$HOME/dev
-export GOROOT=/usr/local/Cellar/go/1.9.2/libexec
+# GOROOTはいらない
+# export GOROOT=/usr/local/Cellar/go/1.9.2/libexec
 export PATH=$GOPATH/bin:$PATH
+### go-buffalo
+export BUFFALO_PLUGIN_PATH=$PATH
 
 ### Python version management: pyenv.
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
+# eval "$(pyenv virtualenv-init -)"
+
+### Python virtual environment wrapper
+# export WORKON_HOME="$HOME/.virtualenvs"
+# source $PYENV_ROOT/shims/virtualenvwrapper.sh
+
+### pipenv
+export PIPENV_VENV_IN_PROJECT=true
 
 ### brew-file
 if [ -f $(brew --prefix)/etc/brew-wrap ];then
@@ -111,3 +122,12 @@ export LESS='-F -g -i -M -R -S -w -X -z-4'
 if (( $#commands[(i)lesspipe(|.sh)] )); then
   export LESSOPEN="| /usr/bin/env $commands[(i)lesspipe(|.sh)] %s 2>&-"
 fi
+
+
+# java
+export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+export PATH=${JAVA_HOME}/bin:$PATH
+
+
+# Typescript
+export TS_POST_PROCESS_FILE="/usr/local/bin/prettier --write"

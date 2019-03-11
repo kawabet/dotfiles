@@ -23,3 +23,14 @@ alias pcd=peco-lscd
 
 # [ghq, peco, hubで快適Gitライフを手に入れよう！ \- Qiita](http://qiita.com/itkrt2y/items/0671d1f48e66f21241e2)
 alias gcd='cd $(ghq list --full-path | peco)'
+
+
+# buffalo
+alias b='buffalo'
+
+# python
+alias py='python'
+
+alias brew="env PATH=${PATH/~\/\.pyenv\/shims:/} brew"
+
+alias dcc='docker-compose'
