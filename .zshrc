@@ -21,6 +21,16 @@ function peco-lscd {
 }
 alias pcd=peco-lscd
 
+# [【Mac】ターミナル設定（iTerm2 \+ zsh \+ prezto \+ peco） \| Nonsense J](https://nonsensej.xyz/articles/wp/259)
+function peco-history-selection() {
+    BUFFER=`history -n 1 | tail -r  | awk '!a[$0]++' | peco`
+    CURSOR=$#BUFFER
+    zle reset-prompt
+}
+zle -N peco-history-selection
+bindkey '^R' peco-history-selection
+
+
 # [ghq, peco, hub$B$G2wE,(BGit$B%i%$%U$r<j$KF~$l$h$&!*(B \- Qiita](http://qiita.com/itkrt2y/items/0671d1f48e66f21241e2)
 alias gcd='cd $(ghq list --full-path | peco)'
 
