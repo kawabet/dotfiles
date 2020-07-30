@@ -11,6 +11,7 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # Customize to your needs...
+setopt nonomatch
 
 # [pecoの基礎の基礎 \- Qiita](http://qiita.com/xtetsuji/items/05f6f4c1b17854cdd75b)
 function peco-lscd {
@@ -41,6 +42,13 @@ alias b='buffalo'
 # python
 alias py='python'
 
-alias brew="env PATH=${PATH/~\/\.pyenv\/shims:/} brew"
+# for mac
+# alias brew="env PATH=${PATH/~\/\.pyenv\/shims:/} brew"
+# for wsl2
+# export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
 
 alias dcc='docker-compose'
+
+autoload -Uz promptinit
+promptinit
+prompt pure

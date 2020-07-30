@@ -1,32 +1,32 @@
 #!/bin/sh
 # vim
-# ln -sf ~/dotfiles/.vimrc ~/.vimrc
-# ln -sf ~/dotfiles/indent ~/.vim
-ln -sf ~/dotfiles/vim/vimrc ~/.vimrc
-ln -sf ~/dotfiles/vim ~/.vim
+# ln -sf $PWD/.vimrc ~/.vimrc
+# ln -sf $PWD/indent ~/.vim
+ln -sf $PWD/vim/vimrc ~/.vimrc
+ln -sf $PWD/vim ~/.vim
 # nvim
-ln -sf ~/dotfiles/vim/vimrc ~/.config/nvim/init.vim
-# ln -sf ~/dotfiles/vim ~/.config/nvim
+ln -sf $PWD/vim/vimrc ~/.config/nvim/init.vim
+# ln -sf $PWD/vim ~/.config/nvim
 # bash
-ln -sf ~/dotfiles/.bash_profile ~/.bash_profile
-ln -sf ~/dotfiles/.bashrc ~/.bashrc
+ln -sf $PWD/.bash_profile ~/.bash_profile
+ln -sf $PWD/.bashrc ~/.bashrc
 # zsh
-ln -sf ~/dotfiles/.zlogin ~/.zlogin
-ln -sf ~/dotfiles/.zlogout ~/.zlogout
-ln -sf ~/dotfiles/.zpreztorc ~/.zpreztorc
-ln -sf ~/dotfiles/.zprofile ~/.zprofile
-ln -sf ~/dotfiles/.zshenv ~/.zshenv
-ln -sf ~/dotfiles/.zshrc ~/.zshrc
-ln -sf ~/dotfiles/prezto ~/.zprezto
+ln -sf $PWD/.zlogin ~/.zlogin
+ln -sf $PWD/.zlogout ~/.zlogout
+ln -sf $PWD/.zpreztorc ~/.zpreztorc
+ln -sf $PWD/.zprofile ~/.zprofile
+ln -sf $PWD/.zshenv ~/.zshenv
+ln -sf $PWD/.zshrc ~/.zshrc
+ln -sf $PWD/prezto ~/.zprezto
 # mac
-# ln -sf ~/dotfiles/Brewfile ~/Brewfile
-ln -sf ~/dotfiles/.ctags ~/.ctags
+# ln -sf $PWD/Brewfile ~/Brewfile
+ln -sf $PWD/.ctags ~/.ctags
 # emacs
-ln -sf ~/dotfiles/.emacs.d ~/.emacs.d
-ln -sf ~/dotfiles/.spacemacs ~/.spacemacs
+ln -sf $PWD/.emacs.d ~/.emacs.d
+ln -sf $PWD/.spacemacs ~/.spacemacs
 # eslint
-ln -sf ~/dotfiles/.eslintrc.json ~/.eslintrc.json
+ln -sf $PWD/.eslintrc.json ~/.eslintrc.json
 # Brewfile
-ln -sf ~/dotfiles/.brewfile ~/.brewfile
+ln -sf $PWD/.brewfile ~/.brewfile
 # tmux
-ln -sf ~/dotfiles/.tmux.conf ~/.tmux.conf
+ln -sf $PWD/.tmux.conf ~/.tmux.conf

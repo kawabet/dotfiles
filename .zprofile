@@ -53,6 +53,9 @@ PATH=$PATH:$HOME/bin
 
 export PATH
 export PATH="/usr/local/bin:$PATH"
+# for wsl2
+export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
+
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
@@ -125,7 +128,11 @@ fi
 
 
 # java
-export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+# for Mac
+# export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+# for wsl2
+# export JAVA_HOME=`/usr/lib/jvm/java-11-openjdk-amd64/bin/java`
+export JAVA_HOME=`/usr/bin/java`
 export PATH=${JAVA_HOME}/bin:$PATH
 
 
