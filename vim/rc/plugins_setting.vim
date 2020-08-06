@@ -126,15 +126,15 @@ nnoremap <silent> [fugitive]b :<C-u>Gblame<Enter>
 " grep検索の実行後にQuickFix Listを表示する
 autocmd QuickFixCmdPost *grep* cwindow
 " ステータス行に現在のgitブランチを表示する
-set statusline+=%{fugitive#statusline()}
+" set statusline+=%{FugitiveStatusline()}
 
 """"""""""""""""""""""""""""""
 " vim-gitgutter
 """"""""""""""""""""""""""""""
 " vim-gitgutterのハイライトを切り替え
 nnoremap <silent> [fugitive]t :<C-u>GitGutterLineHighlightsToggle<Enter>
-nmap <C-n> <Plug>GitGutterNextHunk
-nmap <C-m> <Plug>GitGutterPrevHunk
+nmap <C-n> <Plug>(GitGutterNextHunk)
+nmap <C-m> <Plug>(GitGutterPrevHunk)
 
 
 """"""""""""""""""""""""""""""

@@ -84,3 +84,19 @@ endif
 " imap ( ()<LEFT>
 """"""""""""""""""""""""""""""
 
+
+" clipboard for wsl2
+if system('uname -a | grep microsoft') != ""
+  let g:clipboard = {
+    \  'name': 'wslClipboard',
+    \   'copy': {
+    \      '+': 'win32yank.exe -i',
+    \      '*': 'win32yank.exe -i',
+    \   },
+    \  'paste': {
+    \      '+': 'win32yank.exe -o',
+    \      '*': 'win32yank.exe -o',
+    \   },
+    \   'cache_enabled': 1
+    \ }
+endif

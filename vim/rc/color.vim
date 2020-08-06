@@ -11,7 +11,8 @@ syntax enable
 " colorscheme hybrid_reverse
 " colorscheme Tomorrow-Night-Eighties
 " colorscheme luna-term
-colorscheme desertEx
+
+colorscheme desert
 " colorscheme base
 
 " コメントを濃い緑にする

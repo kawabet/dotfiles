@@ -82,17 +82,17 @@ nnoremap <c-j> <c-w>W
 " nmap <c-Space> <Plug>DWMFocus
 
 " 幅を増やす
-call submode#enter_with('bufmove', 'n', '', 's>', '<C-w>>')
-call submode#map('bufmove', 'n', '', '>', '<C-w>>')
+" call submode#enter_with('bufmove', 'n', '', 's>', '<C-w>>')
+" call submode#map('bufmove', 'n', '', '>', '<C-w>>')
 " 幅を減らす
-call submode#enter_with('bufmove', 'n', '', 's<', '<C-w><')
-call submode#map('bufmove', 'n', '', '<', '<C-w><')
+" call submode#enter_with('bufmove', 'n', '', 's<', '<C-w><')
+" call submode#map('bufmove', 'n', '', '<', '<C-w><')
 " 高さを増やす
-call submode#enter_with('bufmove', 'n', '', 's+', '<C-w>+')
-call submode#map('bufmove', 'n', '', '+', '<C-w>+')
+" call submode#enter_with('bufmove', 'n', '', 's+', '<C-w>+')
+" call submode#map('bufmove', 'n', '', '+', '<C-w>+')
 " 高さを減らす
-call submode#enter_with('bufmove', 'n', '', 's-', '<C-w>-')
-call submode#map('bufmove', 'n', '', '-', '<C-w>-')
+" call submode#enter_with('bufmove', 'n', '', 's-', '<C-w>-')
+" call submode#map('bufmove', 'n', '', '-', '<C-w>-')
 
 " [neovimのterminal emulatorが便利すぎた \- tsub’s blog](http://tsub.hatenablog.com/entry/2016/07/02/220823)
 " ESCでterminalをcommand modeにする
