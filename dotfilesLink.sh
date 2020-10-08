@@ -30,3 +30,5 @@ ln -sf ~/dotfiles/.eslintrc.json ~/.eslintrc.json
 ln -sf ~/dotfiles/.brewfile ~/.brewfile
 # tmux
 ln -sf ~/dotfiles/.tmux.conf ~/.tmux.conf
+# idea vim
+ln -sf ~/dotfiles/.ideavimrc ~/.ideavimrc

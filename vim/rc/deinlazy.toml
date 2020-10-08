@@ -163,14 +163,15 @@ on_ft = ['css', 'html', 'less', 'sass', 'scss', 'stylus', 'vim']
 repo='leafgarland/typescript-vim'
 on_ft='typescript'
 on_i = 1
+
 # [TypeScriptのTSServerとVim plugin \- Qiita](http://qiita.com/Quramy/items/e0f004695e8bcda7604e)
-[[plugins]]
-repo='Quramy/tsuquyomi'
-on_ft='typescript'
-on_i = 1
-hook_add='''
-  " let g:tsuquyomi_disable_quickfix = 1
-'''
+# [[plugins]]
+# repo='Quramy/tsuquyomi'
+# on_ft='typescript'
+# on_i = 1
+# hook_add='''
+#   " let g:tsuquyomi_disable_quickfix = 1
+# '''
 
 [[plugins]]
 repo = 'chr4/nginx.vim'
@@ -212,8 +213,8 @@ hook_add = '''
 '''
 
 # JavaScriptコード補完
-[[plugins]]
-repo = 'marijnh/tern_for_vim'
-on_ft = 'javascript'
-build = 'npm install'
+# [[plugins]]
+# repo = 'marijnh/tern_for_vim'
+# on_ft = 'javascript'
+# build = 'npm install'
 

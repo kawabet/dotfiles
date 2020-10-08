@@ -132,9 +132,9 @@ set statusline+=%{fugitive#statusline()}
 " vim-gitgutter
 """"""""""""""""""""""""""""""
 " vim-gitgutterのハイライトを切り替え
-nnoremap <silent> [fugitive]t :<C-u>GitGutterLineHighlightsToggle<Enter>
-nmap <C-n> <Plug>GitGutterNextHunk
-nmap <C-m> <Plug>GitGutterPrevHunk
+" nnoremap <silent> [fugitive]t :<C-u>GitGutterLineHighlightsToggle<Enter>
+" nmap <C-n> <Plug>GitGutterNextHunk
+" nmap <C-m> <Plug>GitGutterPrevHunk
 
 
 """"""""""""""""""""""""""""""

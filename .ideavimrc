@@ -1,0 +1,7 @@
+set surround
+set clipboard=unnamed
+set ignorecase
+set smartcase
+
+noremap w [w
+noremap b [b

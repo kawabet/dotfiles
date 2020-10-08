@@ -99,14 +99,18 @@ export TERM=xterm-256color
 eval "$(hub alias -s)"
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f ~/workspace/google-cloud-sdk/path.zsh.inc ]; then
-  source ~/workspace/google-cloud-sdk/path.zsh.inc
-fi
+# if [ -f ~/workspace/google-cloud-sdk/path.zsh.inc ]; then
+#   source ~/workspace/google-cloud-sdk/path.zsh.inc
+# fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f ~/workspace/google-cloud-sdk/completion.zsh.inc ]; then
-  source ~/workspace/google-cloud-sdk/completion.zsh.inc
-fi
+# if [ -f ~/workspace/google-cloud-sdk/completion.zsh.inc ]; then
+#   source ~/workspace/google-cloud-sdk/completion.zsh.inc
+# fi
+
+# GCPはhomebrewで入れる
+source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
+source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
 
 #
 # Less
@@ -131,3 +135,15 @@ export PATH=${JAVA_HOME}/bin:$PATH
 
 # Typescript
 export TS_POST_PROCESS_FILE="/usr/local/bin/prettier --write"
+
+# flutter
+export PATH=$PATH:$HOME/flutter/bin
+
+# nodebrew
+# export PATH=$HOME/.nodebrew/current/bin:$PATH
+
+
+# Android SDK
+# export ANDROID_HOME=“/usr/local/share/android-sdk”
+# export PATH=“${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools”
+

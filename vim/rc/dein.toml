@@ -191,3 +191,10 @@ hook_add = '''
 
 [[plugins]]
 repo = "ctrlpvim/ctrlp.vim"
+
+# camelcasemotion
+[[plugins]]
+repo = 'bkad/CamelCaseMotion'
+hook_add = '''
+  let g:camelcasemotion_key = '<leader>'
+'''

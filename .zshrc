@@ -44,3 +44,9 @@ alias py='python'
 alias brew="env PATH=${PATH/~\/\.pyenv\/shims:/} brew"
 
 alias dcc='docker-compose'
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+
+# anyenv
+eval "$(anyenv init -)"

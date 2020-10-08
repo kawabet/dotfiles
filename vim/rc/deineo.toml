@@ -1,28 +1,28 @@
 
-[[plugins]]
-repo = 'zchee/deoplete-jedi'
-on_i = 1
-on_ft = 'python'
+# [[plugins]]
+# repo = 'zchee/deoplete-jedi'
+# on_i = 1
+# on_ft = 'python'
 
-[[plugins]]
-repo = 'zchee/deoplete-go'
-on_i = 1
-on_ft = 'go'
+# [[plugins]]
+# repo = 'zchee/deoplete-go'
+# on_i = 1
+# on_ft = 'go'
 
 
-[[plugins]]
-repo = 'Shougo/deoplete.nvim'
-depends = 'context_filetype.vim'
-if = "has('nvim')"
-hook_source = '''
-  let g:deoplete#enable_at_startup = 1
-  " Tab補完の設定
-  " [deoplete環境でneosnippetを使えるようにする \- グレインの備忘録](http://grainrigi.hatenablog.com/entry/2017/08/28/230029)
-  inoremap <expr><tab> pumvisible() ? "\<C-n>" :
-        \ neosnippet#expandable_or_jumpable() ?
-        \    "\<Plug>(neosnippet_expand_or_jump)" : "\<tab>" " source ~/.vim/rc/plugins/deoplete.rc.vim
-'''
-on_i = 1
+# [[plugins]]
+# repo = 'Shougo/deoplete.nvim'
+# depends = 'context_filetype.vim'
+# if = "has('nvim')"
+# hook_source = '''
+#   let g:deoplete#enable_at_startup = 1
+#   " Tab補完の設定
+#   " [deoplete環境でneosnippetを使えるようにする \- グレインの備忘録](http://grainrigi.hatenablog.com/entry/2017/08/28/230029)
+#   inoremap <expr><tab> pumvisible() ? "\<C-n>" :
+#         \ neosnippet#expandable_or_jumpable() ?
+#         \    "\<Plug>(neosnippet_expand_or_jump)" : "\<tab>" " source ~/.vim/rc/plugins/deoplete.rc.vim
+# '''
+# on_i = 1
 
 
 [[plugins]]
@@ -30,14 +30,16 @@ repo = 'kassio/neoterm'
 if = "has('nvim')"
 on_i = 1
 hook_source = '''
-  let g:neoterm_size = 15
-  let g:neoterm_default_mod = 'horizontal'
+  " let g:neoterm_size = 15
+  let g:neoterm_default_mod = 'belowright'
   let g:neoterm_automap_keys = ',tt'
+  let g:neoterm_autoinsert = 1
+
 
   " [Neovimはじめました & 2016年vimrc大掃除](http://blog.muuny-blue.info/c95d62c68196b2d0c1c1de8c7eeb6d50.html#neoterm)
-  nnoremap <silent> ,rc :TREPLSendFile<cr>
-  nnoremap <silent> ,rl :TREPLSendLine<cr>
-  vnoremap <silent> ,rl :TREPLSendSelection<cr>
-  nnoremap <silent> vt :Ttoggle<cr>
-  nnoremap <silent> vs :terminal<cr>
+  nnoremap <silent> ,rc :TREPLSendFile<CR>
+  nnoremap <silent> ,rl :TREPLSendLine<CR>
+  vnoremap <silent> ,rl :TREPLSendSelection<CR>
+  nnoremap <silent> vt :Ttoggle<CR>
+  nnoremap <silent> vs :terminal<CR>
 '''

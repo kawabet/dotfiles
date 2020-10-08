@@ -53,3 +53,9 @@ fi
 if [ -f ~/workspace/google-cloud-sdk/completion.bash.inc ]; then
   source ~/workspace/google-cloud-sdk/completion.bash.inc
 fi
+
+# flutter
+export PATH=$PATH:$HOME/flutter/bin
+
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
