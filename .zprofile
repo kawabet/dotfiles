@@ -85,6 +85,12 @@ eval "$(pyenv init -)"
 
 ### pipenv
 export PIPENV_VENV_IN_PROJECT=true
+export PIPENV_VERBOSITY=-1
+
+### open-ssl psycopg2用
+### https://dev.classmethod.jp/articles/mac-psycopg2-install/
+export LDFLAGS="-L/usr/local/opt/openssl@1.1/lib"
+export CPPFLAGS="-I/usr/local/opt/openssl@1.1/include"
 
 ### brew-file
 if [ -f $(brew --prefix)/etc/brew-wrap ];then
