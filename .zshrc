@@ -13,6 +13,13 @@ path=(
 	$path
 )
 
+### Python version management: pyenv.
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+# eval "$(pyenv virtualenv-init -)"
+
+
 if (( $+commands[sw_vers] )) && (( $+commands[arch] )); then
 	[[ -x /usr/local/bin/brew ]] && alias brew="arch -arch x86_64 /usr/local/bin/brew"
 	alias x64='exec arch -x86_64 /bin/zsh'
@@ -71,9 +78,12 @@ alias dcc='docker-compose'
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
+# https://ktaka.hatenablog.com/entry/2018/11/11/001635
+export PATH="/usr/local/opt/libpq/bin:$PATH"
 
 # open-ssl
-export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
+# export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
+# export PATH="/usr/local/opt/openssl@1.1/bin/openssl:$PATH"
 
 # anyenv
 eval "$(anyenv init -)"

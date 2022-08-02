@@ -73,12 +73,6 @@ export PATH=$GOPATH/bin:$PATH
 ### go-buffalo
 export BUFFALO_PLUGIN_PATH=$PATH
 
-### Python version management: pyenv.
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-# eval "$(pyenv virtualenv-init -)"
-
 ### Python virtual environment wrapper
 # export WORKON_HOME="$HOME/.virtualenvs"
 # source $PYENV_ROOT/shims/virtualenvwrapper.sh
@@ -136,6 +130,8 @@ fi
 
 # java
 export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+# export JAVA_HOME=`/usr/libexec/java_home -v 8`
+# export JAVA_HOME=`/Library/Java/JavaVirtualMachines/zulu-8.jdk/Contents/Home`
 export PATH=${JAVA_HOME}/bin:$PATH
 
 
@@ -148,8 +144,8 @@ export PATH=$PATH:$HOME/flutter/bin
 # nodebrew
 # export PATH=$HOME/.nodebrew/current/bin:$PATH
 
-
 # Android SDK
-# export ANDROID_HOME=“/usr/local/share/android-sdk”
-# export PATH=“${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools”
+export ANDROID_HOME=/Users/kawabet/Library/Android/sdk
+# export ANDROID_HOME=/usr/local/share/android-sdk
+export PATH=“${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools”
 
