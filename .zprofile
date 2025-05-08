@@ -83,13 +83,16 @@ export PIPENV_VERBOSITY=-1
 
 ### open-ssl psycopg2用
 ### https://dev.classmethod.jp/articles/mac-psycopg2-install/
-export LDFLAGS="-L/usr/local/opt/openssl@1.1/lib"
-export CPPFLAGS="-I/usr/local/opt/openssl@1.1/include"
+# export LDFLAGS="-L/usr/local/opt/openssl@1.1/lib"
+# export CPPFLAGS="-I/usr/local/opt/openssl@1.1/include"
+export LDFLAGS="-L$(brew --prefix openssl)/lib"
+export CPPFLAGS="-I$(brew --prefix openssl)/include"
+export PATH="/usr/local/opt/openssl/bin:$PATH"
 
 ### brew-file
-if [ -f $(brew --prefix)/etc/brew-wrap ];then
-  source $(brew --prefix)/etc/brew-wrap
-fi
+# if [ -f $(brew --prefix)/etc/brew-wrap ];then
+#   source $(brew --prefix)/etc/brew-wrap
+# fi
 
 ### neovim
 export XDG_CONFIG_HOME="$HOME/.config"
@@ -129,8 +132,9 @@ fi
 
 
 # java
-export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 # export JAVA_HOME=`/usr/libexec/java_home -v 8`
+# export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+export JAVA_HOME=`/usr/libexec/java_home -v "11"`
 # export JAVA_HOME=`/Library/Java/JavaVirtualMachines/zulu-8.jdk/Contents/Home`
 export PATH=${JAVA_HOME}/bin:$PATH
 

@@ -74,12 +74,24 @@ alias py='python'
 
 alias brew="env PATH=${PATH/~\/\.pyenv\/shims:/} brew"
 
-alias dcc='docker-compose'
+alias dcc='docker compose'
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
-# https://ktaka.hatenablog.com/entry/2018/11/11/001635
-export PATH="/usr/local/opt/libpq/bin:$PATH"
+
+export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
+export LDFLAGS="-L/opt/homebrew/opt/libpq/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/libpq/include"
+
+
+# mysql
+export PATH="/opt/homebrew/opt/mysql-client@8.0/bin:$PATH"
+export LDFLAGS="-L/opt/homebrew/opt/mysql-client@8.0/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/mysql-client@8.0/include"
+# export DYLD_LIBRARY_PATH=/opt/homebrew/opt/mysql@8.0/lib/:$DYLD_LIBRARY_PATH
+
+export DYLD_LIBRARY_PATH=/opt/homebrew/lib:$DYLD_LIBRARY_PATH
+
 
 # open-ssl
 # export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
@@ -87,3 +99,24 @@ export PATH="/usr/local/opt/libpq/bin:$PATH"
 
 # anyenv
 eval "$(anyenv init -)"
+
+# gdal
+export GDAL_LIBRARY_PATH=/opt/homebrew/lib/libgdal.dylib
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/kawabet/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/kawabet/opt/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/kawabet/opt/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/kawabet/opt/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+
+source /Users/kawabet/.docker/init-zsh.sh || true # Added by Docker Desktop
