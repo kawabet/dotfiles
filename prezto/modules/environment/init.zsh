@@ -40,6 +40,9 @@ unsetopt MAIL_WARNING       # Don't print a warning message if a mail file has
 # Allow mapping Ctrl+S and Ctrl+Q shortcuts
 [[ -r ${TTY:-} && -w ${TTY:-} && $+commands[stty] == 1 ]] && stty -ixon <$TTY >$TTY
 
+# Allow mapping Ctrl+S and Ctrl+Q shortcuts
+[[ -r ${TTY:-} && -w ${TTY:-} && $+commands[stty] == 1 ]] && stty -ixon <$TTY >$TTY
+
 #
 # Jobs
 #

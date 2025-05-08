@@ -54,7 +54,6 @@ PATH=$PATH:$HOME/bin
 export PATH
 export PATH="/usr/local/bin:$PATH"
 export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
@@ -98,22 +97,8 @@ export PATH="/usr/local/opt/openssl/bin:$PATH"
 export XDG_CONFIG_HOME="$HOME/.config"
 export TERM=xterm-256color
 
-# [github/hub: hub helps you win at git\.](https://github.com/github/hub)
-eval "$(hub alias -s)"
-
-# The next line updates PATH for the Google Cloud SDK.
-# if [ -f ~/workspace/google-cloud-sdk/path.zsh.inc ]; then
-#   source ~/workspace/google-cloud-sdk/path.zsh.inc
-# fi
-
-# The next line enables shell command completion for gcloud.
-# if [ -f ~/workspace/google-cloud-sdk/completion.zsh.inc ]; then
-#   source ~/workspace/google-cloud-sdk/completion.zsh.inc
-# fi
-
 # GCPはhomebrewで入れる
-source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
-source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
+source "/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
 
 #
 # Less
