@@ -5,6 +5,12 @@
 #   Sorin Ionescu <sorin.ionescu@gmail.com>
 #
 
+export PATH="/opt/homebrew/bin:/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
+if [ -e "/opt/homebrew/bin/anyenv" ]; then
+  eval "$(anyenv init -)"
+fi
+
+
 # https://zenn.dev/ress/articles/069baf1c305523dfca3d
 typeset -U path PATH
 path=(
@@ -72,7 +78,7 @@ alias b='buffalo'
 # python
 alias py='python'
 
-alias brew="env PATH=${PATH/~\/\.pyenv\/shims:/} brew"
+# alias brew="env PATH=${PATH/~\/\.pyenv\/shims:/} brew"
 
 alias dcc='docker compose'
 
@@ -98,7 +104,12 @@ export DYLD_LIBRARY_PATH=/opt/homebrew/lib:$DYLD_LIBRARY_PATH
 # export PATH="/usr/local/opt/openssl@1.1/bin/openssl:$PATH"
 
 # anyenv
-eval "$(anyenv init -)"
+if [[ -d "$HOME/.anyenv" ]]; then
+  export PATH="$HOME/.anyenv/bin:$PATH"
+  # パスが設定された後にanyenvを初期化
+  eval "$(anyenv init -)"
+fi
+
 
 # gdal
 export GDAL_LIBRARY_PATH=/opt/homebrew/lib/libgdal.dylib
@@ -117,6 +128,8 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+
+export PATH="/opt/homebrew/sbin:$PATH"
 
 
 source /Users/kawabet/.docker/init-zsh.sh || true # Added by Docker Desktop
