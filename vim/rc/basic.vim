@@ -33,7 +33,9 @@ set wildmenu
 " 入力中のコマンドを表示する
 set showcmd
 " バッファで開いているファイルのディレクトリでエクスクローラを開始する(でもエクスプローラって使ってない)
-set browsedir=buffer
+if !has('nvim')
+  set browsedir=buffer
+endif
 " 小文字のみで検索したときに大文字小文字を無視する
 set ignorecase
 set smartcase
@@ -63,7 +65,11 @@ set cursorline
 " 対応する括弧やブレースを表示する
 set showmatch
 " Vimの「%」を拡張する
-source $VIMRUNTIME/macros/matchit.vim
+if has('nvim')
+  packadd! matchit
+else
+  source $VIMRUNTIME/macros/matchit.vim
+endif
 " 改行時に前の行のインデントを継続する
 set autoindent
 " 改行時に入力された行の末尾に合わせて次の行のインデントを増減する
@@ -83,7 +89,9 @@ set vb t_vb=
 set clipboard+=unnamed
 " ターミナルでマウスを使用できるようにする
 set mouse=a
-set guioptions+=a
+if !has('nvim')
+  set guioptions+=a
+endif
 
 "ヤンクした文字は、システムのクリップボードに入れる"
 set clipboard=unnamed

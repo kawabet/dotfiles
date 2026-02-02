@@ -1,0 +1,31 @@
+# フォント設定（日本語対応フォント）
+font-family = "UDEV Gothic NFLG"
+font-size = 14
+
+# 日本語の文字幅を適切に処理
+grapheme-width-method = legacy
+
+# カラースキーム
+# theme = Catppuccin Mocha
+# theme = Niji
+# theme = Ayu Mirage
+# theme = Arthur
+# theme = Aurora
+theme = Blazer
+
+# ウィンドウ設定
+window-padding-x = 10
+window-padding-y = 10
+# window-decoration = false
+window-show-tab-bar = always
+
+# その他の便利な設定
+copy-on-select = true
+confirm-close-surface = false
+cursor-style = block
+
+window-decoration = auto
+clipboard-read = allow
+clipboard-write = allow
+
+

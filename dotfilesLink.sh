@@ -32,3 +32,9 @@ ln -sf ~/dotfiles/.brewfile ~/.brewfile
 ln -sf ~/dotfiles/.tmux.conf ~/.tmux.conf
 # idea vim
 ln -sf ~/dotfiles/.ideavimrc ~/.ideavimrc
+
+# config directories
+mkdir -p ~/.config
+for dir in ~/dotfiles/config/*; do
+  ln -sf "$dir" ~/.config/"$(basename "$dir")"
+done

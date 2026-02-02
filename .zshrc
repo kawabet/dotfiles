@@ -60,7 +60,7 @@ alias pcd=peco-lscd
 
 # [【Mac】ターミナル設定（iTerm2 \+ zsh \+ prezto \+ peco） \| Nonsense J](https://nonsensej.xyz/articles/wp/259)
 function peco-history-selection() {
-    BUFFER=`history -n 1 | tail -r  | awk '!a[$0]++' | peco`
+    BUFFER=`history -n 1 | tac  | awk '!a[$0]++' | peco`
     CURSOR=$#BUFFER
     zle reset-prompt
 }
@@ -133,3 +133,9 @@ export PATH="/opt/homebrew/sbin:$PATH"
 
 
 source /Users/kawabet/.docker/init-zsh.sh || true # Added by Docker Desktop
+
+# Added by Antigravity
+export PATH="/Users/kawabet/.antigravity/antigravity/bin:$PATH"
+
+# Added by Antigravity
+export PATH="/Users/kawabet/.antigravity/antigravity/bin:$PATH"
